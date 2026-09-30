@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "CargoHype - Freight Forwarding Astro Theme",
-    "base_url": "https://cargohype.example.com",
+    "base_url": "https://cargohype-astro-theme.vercel.app",
     "lang": "en",
     "logo": "/images/Frame-265.webp",
     "logo_dark": "/images/Link_2Link.webp",
