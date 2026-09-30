@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Peak season 2026: how we're holding space when everyone else is rolling cargo",
+    "slug": "peak-season-2026-how-were-holding-space-when-everyone-else-is-rolling-cargo",
+    "summary": "Guaranteed-space contracts on the Asia–Europe corridor mean our clients ship on the sailing they booked, not the one after it.",
+    "publishedDate": "2026-01-14T09:00:00.000Z",
+    "featured": true,
+    "category": "Logistics",
+    "authorName": "Kent Goldberg",
+    "mainImage": "/images/cms/news-peak-season-2026-how-were-holding-space-when-everyone-else-i.webp",
+    "overview": "<h2>Introduction</h2><p>Peak season is not won in October. It is won in the contracts signed in June, when nobody is panicking and space still has a price. We booked guaranteed allocations on the Asia–Europe corridor before the rate curve turned, and that decision is why our clients are sailing on the vessel they booked rather than the one after it.</p><h2>What Rolling Actually Costs</h2><p>A rolled container is rarely a one-week delay. It is a missed connection, a missed berth window, a missed retail set date, and a warehouse crew standing idle on overtime. The freight invoice barely moves; everything downstream does. That is the number we ask clients to price, not the per-container rate.</p><h2>How The Allocation Works</h2><p>We hold fixed weekly slots with three carriers out of Chattogram and Singapore rather than spreading thinly across ten. Fewer relationships, deeper commitments, and a named person on each desk who answers when a vessel omits a port. When space tightens, depth beats breadth every time.</p><h2>Looking Ahead</h2><p>Space on the corridor is already committed through the first quarter. Volumes above contract still move, but on spot terms and without the roll protection — so if your peak is fixed by a retail calendar, the conversation is worth having now rather than in week forty.</p>",
+    "details": "<h2>Guaranteed Space, In Writing</h2><p>A guaranteed-space agreement is only as good as its remedy. Ours names the compensation if we fail to load, which is the clause that makes a carrier plan around you instead of past you.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Holding space costs money in a soft market and saves far more in a tight one. We take that position every year because our clients' production calendars do not flex, and neither should the sailing they were promised.</p>",
+    "tags": [
+      "Shipping",
+      "Freight Management",
+      "Peak Season",
+      "Logistics",
+      "Capacity Planning",
+      "Ocean Freight",
+      "Asia-Europe",
+      "Allocation",
+      "Transportation Planning"
+    ],
+    "transit": "2/5",
+    "cutOff": "12:00 PM",
+    "coverage": "120+",
+    "cardTitle": "Booked is booked",
+    "cardSummary": "Every allocation carries a named remedy if we fail to load, which is what turns a booking confirmation into an actual commitment.",
+    "includedServices": [
+      "Guaranteed weekly slot allocation",
+      "Roll protection with named remedy",
+      "Priority re-booking on port omission",
+      "Fixed corridor rates through Q1",
+      "Named coordinator on every booking"
+    ],
+    "seo": {
+      "metaTitle": "Peak Season 2026: Holding Space, Not Rolling Cargo",
+      "metaDescription": "Guaranteed-space contracts on the Asia–Europe corridor mean our clients sail on the vessel they booked — with a named remedy if we fail to load."
+    }
+  },
+  {
+    "title": "Navigating the Red Sea: new transit times for Q4 shipping",
+    "slug": "navigating-the-red-sea-new-transit-times-for-q4-shipping",
+    "summary": "Cape routings add nine to fourteen days. Here is how we rebuilt the schedules so inventory plans still hold.",
+    "publishedDate": "2026-01-09T09:00:00.000Z",
+    "featured": false,
+    "category": "Logistics",
+    "authorName": "Marta Lindqvist",
+    "mainImage": "/images/cms/news-navigating-the-red-sea-new-transit-times-for-q4-shipping.webp",
+    "overview": "<h2>Introduction</h2><p>Cape routings are no longer the exception on Asia–Europe. They are the schedule. Adding nine to fourteen days to a transit does not simply push arrival dates back — it changes safety stock, it changes letter-of-credit windows, and it changes which SKUs are worth flying instead of floating.</p><h2>Rebuilding The Schedules</h2><p>We rebuilt every affected lane around actual sailing performance rather than published transit times. Where the gap between the two was widest, we split volume: the date-critical portion moves air or sea-air through Dubai, the rest takes the long water and arrives when it arrives.</p><h2>The Inventory Conversation</h2><p>The hardest part of this quarter has not been routing, it has been convincing planners to raise cover on a handful of lines rather than across the board. A blanket increase ties up cash on stock that was never at risk. We model it lane by lane instead.</p><h2>Looking Ahead</h2><p>Assume Cape routings hold through the next planning cycle. If the Red Sea reopens, transit shortens and you are early — a far cheaper mistake than the reverse.</p>",
+    "details": "<h2>Planning Around The Long Way</h2><p>A longer transit is manageable. An unpredictable one is not. We publish a confidence band with every quoted transit so planners can set cover against the worst realistic case, not the brochure figure.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Nine to fourteen extra days is a schedule problem, not a crisis, provided the numbers reach the planning team early enough to act on. That handover is the part we treat as our job.</p>",
+    "tags": [
+      "Logistics",
+      "Ocean Freight",
+      "Red Sea",
+      "Transit Times",
+      "Supply Chain Management",
+      "Inventory Control",
+      "Route Planning",
+      "Risk Management",
+      "Transportation Planning"
+    ],
+    "transit": "9/14",
+    "cutOff": "14:00",
+    "coverage": "86",
+    "cardTitle": "Split the lane, not the budget",
+    "cardSummary": "Only the date-critical portion needs to fly. Splitting volume by urgency costs far less than upgrading an entire shipment.",
+    "includedServices": [
+      "Lane-level transit re-modelling",
+      "Sea-air routing via Dubai",
+      "Confidence bands on quoted transit",
+      "Safety-stock impact analysis",
+      "Weekly schedule reliability reporting"
+    ],
+    "seo": {
+      "metaTitle": "Red Sea Transit Times: Planning Around Cape Routings",
+      "metaDescription": "Cape routings add nine to fourteen days on Asia–Europe. How we rebuilt lane schedules on real sailing performance so inventory plans still hold up."
+    }
+  },
+  {
+    "title": "Pre-arrival clearance: what changed at Rotterdam quarter",
+    "slug": "pre-arrival-clearance-what-changed-at-rotterdam-quarter",
+    "summary": "Filing earlier moved our average gate-out from 38 hours to 11. The paperwork sequence that made the difference.",
+    "publishedDate": "2025-12-18T09:00:00.000Z",
+    "featured": false,
+    "category": "Shipping",
+    "authorName": "Joost van Dijk",
+    "mainImage": "/images/cms/news-pre-arrival-clearance-what-changed-at-rotterdam-quarter.webp",
+    "overview": "<h2>Introduction</h2><p>Rotterdam moved its pre-arrival filing window this quarter, and the change rewards anyone who files early far more than the old rules did. Our average gate-out fell from thirty-eight hours to eleven — not because customs got faster, but because we stopped waiting for the vessel to berth before starting the paperwork.</p><h2>The Sequence That Changed</h2><p>The entry now goes in while the box is still at sea, with the commercial invoice, the packing list and the classification all matched before arrival. Anything that would have triggered a query at the counter gets caught days earlier, when there is still time to fix it without a demurrage clock running.</p><h2>Where It Still Goes Wrong</h2><p>Two things break the sequence: a supplier invoice that arrives after the vessel, and an HS code that does not survive scrutiny. Both are solvable, and both are supplier-side. We now ask for documents at booking rather than at loading.</p><h2>Looking Ahead</h2><p>Antwerp and Hamburg are consulting on similar windows. If your Rotterdam flow is already clean, the same document discipline will carry across without new work.</p>",
+    "details": "<h2>Filing Before The Berth</h2><p>Eleven hours from gate-in to gate-out is not a customs achievement, it is a document achievement. Everything that makes release fast happens weeks before the ship arrives.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Pre-arrival clearance only pays if the paperwork is genuinely ready, not merely submitted. We would rather chase a supplier for an invoice in week one than explain demurrage in week five.</p>",
+    "tags": [
+      "Shipping",
+      "Customs",
+      "Compliance",
+      "Rotterdam",
+      "Freight Management",
+      "Documentation",
+      "Port Operations",
+      "Clearance",
+      "Distribution Services"
+    ],
+    "transit": "1/3",
+    "cutOff": "10:00",
+    "coverage": "27",
+    "cardTitle": "Documents at booking, not at loading",
+    "cardSummary": "Every hour saved at the port was bought earlier in the chain, by collecting commercial documents when the order is placed.",
+    "includedServices": [
+      "Pre-arrival entry filing",
+      "HS classification review",
+      "Document completeness check at booking",
+      "Demurrage and detention monitoring",
+      "Direct customs broker escalation"
+    ],
+    "seo": {
+      "metaTitle": "Pre-Arrival Clearance: What Changed at Rotterdam",
+      "metaDescription": "Filing entries before the vessel berths cut our average gate-out from 38 hours to 11. The document sequence that made the difference, and where it breaks."
+    }
+  },
+  {
+    "title": "Why we price the whole journey, not just the ocean leg",
+    "slug": "why-we-price-the-whole-journey-not-just-the-ocean-leg",
+    "summary": "One landed cost up front — duty, handling and final mile included. If a surcharge appears, we absorb it.",
+    "publishedDate": "2025-12-04T09:00:00.000Z",
+    "featured": false,
+    "category": "Freight Management",
+    "authorName": "Priya Raghunathan",
+    "mainImage": "/images/cms/news-why-we-price-the-whole-journey-not-just-the-ocean-leg.webp",
+    "overview": "<h2>Introduction</h2><p>An ocean rate is the cheapest and least useful number in freight. It tells you nothing about what the shipment will actually cost by the time it reaches a shelf. We quote the whole journey instead — origin handling, ocean, duty, destination charges and final mile — as one figure we are willing to be held to.</p><h2>Where The Money Actually Hides</h2><p>On a typical Asia–Europe door move, the ocean leg is under half the landed cost. Terminal handling, chassis, customs entry, demurrage risk and last-mile delivery make up the rest, and those are precisely the lines that get quoted vaguely or not at all.</p><h2>What Absorbing Surcharges Means</h2><p>If a surcharge appears between quote and invoice, we absorb it. That is not generosity; it is the only way a landed cost is worth anything as a planning number. It also makes us extremely careful about what we promise.</p><h2>Looking Ahead</h2><p>We are extending single-figure pricing to air and to bonded flows this year. The principle stays the same: one number, one owner, no surprises on the invoice.</p>",
+    "details": "<h2>One Number, One Owner</h2><p>Splitting a quote across five suppliers means five chances for the estimate to drift. A single landed cost puts the variance on us, where we can actually manage it.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Clients do not buy ocean freight. They buy delivered goods at a known cost on a known date. Pricing the whole journey is simply quoting the thing they are actually buying.</p>",
+    "tags": [
+      "Freight Management",
+      "Pricing",
+      "Landed Cost",
+      "Logistics",
+      "Supply Chain Management",
+      "Ocean Freight",
+      "Customs",
+      "Order Fulfillment",
+      "Distribution Services"
+    ],
+    "transit": "4/9",
+    "cutOff": "17:00",
+    "coverage": "64",
+    "cardTitle": "Landed cost, not port-to-port",
+    "cardSummary": "One figure covering origin handling, ocean, duty, destination charges and final mile — with surcharges absorbed if they appear after the quote.",
+    "includedServices": [
+      "Single landed-cost quotation",
+      "Surcharge absorption after quote",
+      "Duty and tax estimation at booking",
+      "Consolidated single invoice",
+      "Final-mile delivery included"
+    ],
+    "seo": {
+      "metaTitle": "Why We Price the Whole Journey, Not the Ocean Leg",
+      "metaDescription": "One landed cost up front — origin handling, ocean, duty, destination charges and final mile. If a surcharge appears after the quote, we absorb it."
+    }
+  },
+  {
+    "title": "Inside the network desk: how a 02:00 UTC reroute actually works",
+    "slug": "inside-the-network-desk-how-a-02-00-utc-reroute-actually-works",
+    "summary": "A blocked berth in Singapore, three phone calls and a re-cut booking — walked through hour by hour.",
+    "publishedDate": "2025-11-20T09:00:00.000Z",
+    "featured": false,
+    "category": "Supply Chain",
+    "authorName": "Samuel Adeyemi",
+    "mainImage": "/images/cms/news-inside-the-network-desk-how-a-02-00-utc-reroute-actually-wor.webp",
+    "overview": "<h2>Introduction</h2><p>At two in the morning UTC a berth in Singapore went unavailable and forty-one containers stopped being a schedule and started being a decision. This is what the next four hours looked like from the network desk, hour by hour, including the call we got wrong.</p><h2>Hour One: Confirming, Not Reacting</h2><p>The first alert came from the carrier feed, the second from the terminal. Neither is authoritative on its own. The desk called the agent before touching a booking, because a re-cut made on a false signal costs more than twenty minutes of waiting.</p><h2>Hour Two And Three: Re-cutting</h2><p>Nine containers had a fixed retail set date and moved to the next available string via Port Klang. The remaining thirty-two had float and stayed put. Splitting the shipment cost less than upgrading all forty-one, and the client approved it by message at 04:12.</p><h2>Hour Four: Telling People</h2><p>Every affected consignee had a revised ETA before their working day started. Nobody found out from a tracking page. That is the part of the process we consider non-negotiable.</p>",
+    "details": "<h2>What We Got Wrong</h2><p>We re-cut two boxes that did not need it, because the float figure in our system was three days stale. The rule changed the same week: float is confirmed with the planner, never read from cache.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Reroutes are not exceptional; they are a Tuesday. What separates a good desk from a bad one is whether the client hears it from a person before they see it on a screen.</p>",
+    "tags": [
+      "Supply Chain Management",
+      "Network Operations",
+      "Logistics",
+      "Exception Handling",
+      "Ocean Freight",
+      "Singapore",
+      "Transportation Planning",
+      "Route Planning",
+      "Transport Solutions"
+    ],
+    "transit": "2/6",
+    "cutOff": "02:00",
+    "coverage": "51",
+    "cardTitle": "A person, before the tracking page",
+    "cardSummary": "Every affected consignee had a revised ETA and a reason before their working day started — no client discovered the delay from a status feed.",
+    "includedServices": [
+      "24/7 network desk monitoring",
+      "Multi-source disruption verification",
+      "Priority re-cut on alternative strings",
+      "Proactive consignee notification",
+      "Post-incident review within 48 hours"
+    ],
+    "seo": {
+      "metaTitle": "Inside the Network Desk: A 02:00 UTC Reroute",
+      "metaDescription": "A blocked berth in Singapore, forty-one containers and four hours of decisions — walked through hour by hour, including the call we got wrong."
+    }
+  },
+  {
+    "title": "Air charter capacity in Q1: what shippers should book now",
+    "slug": "air-charter-capacity-in-q1-what-shippers-should-book-now",
+    "summary": "Priority uplift tightens six weeks before Lunar New Year. The booking windows that still have room.",
+    "publishedDate": "2025-11-06T09:00:00.000Z",
+    "featured": false,
+    "category": "Freight Management",
+    "authorName": "Elena Vasquez",
+    "mainImage": "/images/cms/news-air-charter-capacity-in-q1-what-shippers-should-book-now.webp",
+    "overview": "<h2>Introduction</h2><p>Priority uplift on the main Asia lanes tightens roughly six weeks before Lunar New Year, and charter capacity goes earlier still. If your first quarter includes a launch, a recall replacement or a seasonal set date, the booking window that still has room is closing now rather than in January.</p><h2>What Is Already Gone</h2><p>Full freighter charters out of Chattogram and Ho Chi Minh for the two weeks before the holiday are effectively committed. Part-charter and block space on scheduled services remain, at rates that will not improve.</p><h2>The Windows That Remain</h2><p>Early January and the ten days immediately after the holiday are still open and are the best value in the quarter. Cargo that can shift by a week in either direction should shift; cargo that cannot should be on a block-space agreement rather than spot.</p><h2>Looking Ahead</h2><p>We hold a standing allocation on three scheduled services through March. Volume above that moves, but on spot terms — which in Q1 means paying for someone else's planning.</p>",
+    "details": "<h2>Charter Versus Block Space</h2><p>A full charter only pays above a certain volume and a certain urgency. Below that, block space on a scheduled service gives most of the certainty at a fraction of the commitment.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Air capacity in Q1 is a calendar problem before it is a rate problem. Book the window and the rate follows; chase the rate and the window is gone.</p>",
+    "tags": [
+      "Freight Management",
+      "Air Freight",
+      "Charter",
+      "Capacity Planning",
+      "Logistics",
+      "Peak Season",
+      "Transportation Planning",
+      "Shipping",
+      "Transport Solutions"
+    ],
+    "transit": "1/2",
+    "cutOff": "11:00",
+    "coverage": "94",
+    "cardTitle": "Book the window, not the rate",
+    "cardSummary": "Cargo that can move a week either side of the holiday saves more than any rate negotiation will recover once capacity is committed.",
+    "includedServices": [
+      "Block space on scheduled services",
+      "Part and full charter arrangement",
+      "Q1 capacity forecasting",
+      "Priority uplift for time-critical cargo",
+      "Dangerous goods and temperature handling"
+    ],
+    "seo": {
+      "metaTitle": "Air Charter Capacity in Q1: What to Book Now",
+      "metaDescription": "Priority uplift on the main Asia lanes tightens six weeks before Lunar New Year. The charter and block-space booking windows that still have room."
+    }
+  },
+  {
+    "title": "Tracking across carriers: one screen, six APIs, no spreadsheets",
+    "slug": "tracking-across-carriers-one-screen-six-apis-no-spreadsheets",
+    "summary": "How we normalise status events from six carrier feeds so a container reads the same wherever it is.",
+    "publishedDate": "2025-10-23T09:00:00.000Z",
+    "featured": false,
+    "category": "Transport Solutions",
+    "authorName": "Daniel Osei",
+    "mainImage": "/images/cms/news-tracking-across-carriers-one-screen-six-apis-no-spreadsheets.webp",
+    "overview": "<h2>Introduction</h2><p>Six carriers publish six different vocabularies for the same event. One calls it discharged, another calls it gate-out full, a third sends nothing at all until the box moves inland. Until those feeds agree, a tracking page is just a place where spreadsheets go to be re-typed.</p><h2>Normalising The Events</h2><p>We map every carrier status onto a single set of nine milestones and keep the raw event underneath it. The client sees one language; when something looks wrong, the desk can still read the original message from the carrier rather than a lossy summary.</p><h2>The Gaps Nobody Advertises</h2><p>Two of the six feeds go quiet between departure and arrival. We fill those windows with terminal and agent data instead of leaving a blank, and we label the source so nobody mistakes an inference for a scan.</p><h2>Looking Ahead</h2><p>Next is predicted ETA against actual berth performance rather than published schedule, so the number on the screen is the one worth planning against.</p>",
+    "details": "<h2>One Screen, Honest Sources</h2><p>Every milestone carries its origin — carrier scan, terminal record or agent confirmation. A tracking page that hides its sources is a tracking page nobody trusts twice.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>The goal was never a prettier dashboard. It was to end the daily spreadsheet reconciliation that three of our clients were still doing by hand at eight in the morning.</p>",
+    "tags": [
+      "Transport Solutions",
+      "Technology",
+      "Tracking",
+      "Visibility",
+      "Supply Chain Management",
+      "Integration",
+      "Logistics",
+      "Order Fulfillment",
+      "Distribution Services"
+    ],
+    "transit": "3/8",
+    "cutOff": "23:59",
+    "coverage": "73",
+    "cardTitle": "Nine milestones, six feeds",
+    "cardSummary": "Every carrier status maps onto one shared vocabulary, with the raw event kept underneath so the desk can always check the original.",
+    "includedServices": [
+      "Multi-carrier API integration",
+      "Normalised milestone tracking",
+      "Source labelling on every event",
+      "Terminal and agent gap filling",
+      "Exception alerts by email and webhook"
+    ],
+    "seo": {
+      "metaTitle": "Tracking Across Carriers: One Screen, Six APIs",
+      "metaDescription": "How we normalise status events from six carrier feeds onto nine shared milestones, so a container reads the same wherever it is — with sources labelled."
+    }
+  },
+  {
+    "title": "Weekly guaranteed-space sailings added from Chattogram",
+    "slug": "weekly-guaranteed-space-sailings-added-from-chattogram",
+    "summary": "Deferring duty helps slow-moving stock and hurts fast-turn lines. A simple test for which one you have.",
+    "publishedDate": "2025-10-09T09:00:00.000Z",
+    "featured": false,
+    "category": "Shipping",
+    "authorName": "Nadia Rahman",
+    "mainImage": "/images/cms/news-weekly-guaranteed-space-sailings-added-from-chattogram.webp",
+    "overview": "<h2>Introduction</h2><p>Bonded warehousing gets sold as a tax saving. It is not one. Duty is deferred, never reduced, so the real question is whether the cash you free up is worth more than the storage and compliance you take on. For slow-moving stock the answer is usually yes; for fast-turn lines it is usually no.</p><h2>The Test We Use</h2><p>If goods sit longer than about sixty days before sale, the deferred duty is working capital you can actually use. Below thirty days, the bonded premium and the extra reporting cost more than the financing benefit, and a normal warehouse wins.</p><h2>What The Bond Really Costs</h2><p>Bonded space carries a premium per pallet, tighter stock control, and a reconciliation that has to balance every month. That last item is the one clients underestimate — it is a process commitment, not just a rate.</p><h2>Looking Ahead</h2><p>Our Dhaka facility now runs mixed bonded and duty-paid zones under one roof, so stock can be split by turn rate rather than forcing an all-or-nothing decision.</p>",
+    "details": "<h2>Duty Deferred, Not Avoided</h2><p>A bonded facility postpones duty until goods leave the zone. It never changes the amount owed, so the benefit is financing — and financing is only worth paying for when the money sits still long enough to matter.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>Bonded storage is a cash-flow instrument wearing a warehouse costume. Run the sixty-day test on your own turn rates before anyone quotes you a pallet rate.</p>",
+    "tags": [
+      "Warehouse Operations",
+      "Customs",
+      "Bonded Storage",
+      "Inventory Control",
+      "Compliance",
+      "Dhaka",
+      "Shipping",
+      "Supply Chain Management",
+      "Distribution Services"
+    ],
+    "transit": "5/12",
+    "cutOff": "16:00",
+    "coverage": "38",
+    "cardTitle": "The sixty-day test",
+    "cardSummary": "Stock that sits longer than sixty days benefits from deferred duty. Below thirty, the bonded premium and reporting outweigh the financing gain.",
+    "includedServices": [
+      "Bonded storage under customs seal",
+      "Duty deferral until release",
+      "In-bond transfer between facilities",
+      "Bonded picking and re-labelling",
+      "Monthly stock reconciliation"
+    ],
+    "seo": {
+      "metaTitle": "Weekly Guaranteed-Space Sailings from Chattogram",
+      "metaDescription": "Deferred duty helps slow-moving stock and hurts fast-turn lines. Use our sixty-day test to decide whether bonded storage is worth the pallet premium."
+    }
+  },
+  {
+    "title": "Peak season debrief: five lanes that held and three that didn't",
+    "slug": "peak-season-debrief-five-lanes-that-held-and-three-that-didnt",
+    "summary": "What our on-time numbers actually looked like last peak, lane by lane, including the ones we got wrong.",
+    "publishedDate": "2025-09-25T09:00:00.000Z",
+    "featured": false,
+    "category": "Logistics",
+    "authorName": "Kent Goldberg",
+    "mainImage": "/images/cms/news-peak-season-debrief-five-lanes-that-held-and-three-that-didn.webp",
+    "overview": "<h2>Introduction</h2><p>As we gear up for the peak season of 2026, it's vital to secure space while others rush to move their cargo. We're proactively reserving allocations with our main carriers from Dhaka and Singapore, allowing us to manage daily consolidations effectively. Our committed clearance team is prepared to handle incoming cargo promptly upon arrival.</p><h2>Digital Transformation</h2><p>As we approach the peak season of 2026, our focus on digital transformation is crucial. While others are busy rolling out cargo, we're strategically holding space to ensure efficiency. Our partnerships with key carriers from Dhaka and Singapore allow us to manage daily consolidations effectively, and our dedicated clearance team is ready to handle cargo seamlessly as soon as it arrives.</p><h2>The Role of Emerging Technology</h2><p>In Peak Season 2026, emerging technology plays a crucial role in managing our logistics. While others are overwhelmed with full cargo loads, we strategically reserve space with our trusted carriers from Dhaka and Singapore. Our daily consolidations ensure that we efficiently handle shipments, and our dedicated clearance team is ready to process cargo as soon as it arrives. This proactive approach allows us to maintain control and deliver exceptional service during the busiest times.</p><h2>Looking Ahead</h2><p>Looking Ahead to Peak Season 2026: We're securing space while others are fully loaded. Our strategy involves collaborating with key carriers from Dhaka and Singapore, managing daily consolidations, and ensuring our cargo is ready for our dedicated clearance team as soon as it arrives.</p>",
+    "details": "<h2>Embracing Innovation at Freight</h2><p>Fast freight fails when it depends on luck at the counter. Our air product is built on capacity we already hold and paperwork that's already filed.</p>",
+    "conclusion": "<h2>Conclusion</h2><p>When a production line is waiting or a launch date is fixed, the plan matters more than the plane. We hold allocations with core carriers out of Dhaka and Singapore, build consolidations daily, and hand cargo to our own clearance team before wheels touch down.</p>",
+    "tags": [
+      "Shipping",
+      "Freight Management",
+      "Transport Solutions",
+      "Logistics",
+      "Supply Chain Management",
+      "Inventory Control",
+      "Warehouse Operations",
+      "Order Fulfillment",
+      "Transportation Planning"
+    ],
+    "transit": "2/5",
+    "cutOff": "12:00 PM",
+    "coverage": "120+",
+    "cardTitle": "One tender, one handler",
+    "cardSummary": "Cargo is tendered once, flies under our house air waybill, and is met on arrival by our own clearance team. No blind handoffs.",
+    "includedServices": [
+      "Express & consolidated uplift",
+      "Charter capacity for project cargo",
+      "IATA dangerous-goods handling",
+      "Temperature-sensitive shipments",
+      "Door-to-door with final mile"
+    ],
+    "seo": {
+      "metaTitle": "Peak Season Debrief: Five Lanes That Held, Three That Didn't",
+      "metaDescription": "Our on-time numbers from last peak, lane by lane, including the three we got wrong — and what we changed in allocation, consolidation and clearance."
+    }
+  }
+]

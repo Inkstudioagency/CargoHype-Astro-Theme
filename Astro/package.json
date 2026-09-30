@@ -1,0 +1,38 @@
+{
+  "name": "cargohype-astro-theme",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro",
+    "cms:import": "node scripts/import-csv.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "marked": "^18.0.14"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "description": "CargoHype — a freight forwarding & logistics Astro theme with Strapi CMS integration.",
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "astro-theme",
+    "logistics",
+    "freight",
+    "strapi",
+    "cms"
+  ],
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.6.3",
+    "typescript": "^6.0.3"
+  }
+}

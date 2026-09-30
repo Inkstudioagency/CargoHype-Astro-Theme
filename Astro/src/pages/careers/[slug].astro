@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+import ArrowButton from '../../components/ui/ArrowButton.astro';
+import config from '../../config/config.json';
+import { getCareers, formatDate, type Career } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const careers = await getCareers();
+  return careers.map((career) => ({ params: { slug: career.slug }, props: { career } }));
+}
+
+const { career } = Astro.props as { career: Career };
+const pageId = config.webflow.pages.career_detail;
+const SEO_TITLE = career.seo?.metaTitle || career.title;
+const SEO_DESCRIPTION = career.seo?.metaDescription || career.summary;
+const SEO_IMAGE = career.seo?.ogImage || undefined;
+---
+
+<BaseLayout pageId={pageId} fullTitle={SEO_TITLE} description={SEO_DESCRIPTION} image={SEO_IMAGE}>
+  <div class="page-wrapper">
+    <div id="career-hero" class="career-details-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-item-wrap">
+              <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <div class="hero-badge-text uppercase">CAREERS DETAILS</div>
+              </div>
+              <div class="about-head-row career-hero-main">
+                <div class="max-width-74">
+                  <h1 class="hero-title">{career.title}</h1>
+                </div>
+                <div class="newsroom-hero-rgjht">
+                  <p class="hero-paragraph career-details-text">{career.summary}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section white-50">
+      <div class="section-gap large">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="career-details-grid">
+            <div to-top-0="" class="post-sidebar">
+              <div class="section-badge white">
+                <div class="badge-dot deep"></div>
+                <div class="section-badge-text">Preview</div>
+              </div>
+              <div class="post-meta-list">
+                <div class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Location</div>
+                    <div class="post-meta-value-row">
+                      <div class="post-meta-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M12 21s7-5.686 7-11a7 7 0 1 0-14 0c0 5.314 7 11 7 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+                          <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"></circle>
+                        </svg></div>
+                      <p class="post-meta-value">{career.location}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Time</div>
+                    <div class="post-meta-value-row">
+                      <div class="post-meta-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                          <path d="M12 7v5.25L15.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                      <p class="post-meta-value">{career.jobType}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Date</div>
+                    <div class="post-meta-value-row">
+                      <div class="post-meta-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
+                          <path d="M3.5 9.5h17M8 3.5V6M16 3.5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg></div>
+                      <p class="post-meta-value">{formatDate(career.date)}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ArrowButton href="/contact" label={career.buttonText || 'Apply now'} variant="brand" />
+            </div>
+            <div class="service-right">
+              <div class="service-section">
+                <div to-top-0="" class="section-badge white">
+                  <div class="badge-dot deep"></div>
+                  <div class="section-badge-text">SEC / 01 Overview</div>
+                </div>
+                <div to-top-0="" class="career-details w-richtext" set:html={career.overview}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Faq />
+    <Cta />
+    <Footer backTo="career-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

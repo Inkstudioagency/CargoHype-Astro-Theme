@@ -1,0 +1,317 @@
+[
+  {
+    "title": "Air freight",
+    "slug": "air-freights",
+    "serialNumber": "01",
+    "summary": "Priority uplift on scheduled and charter capacity for time-critical cargo, with door-to-door transit as fast as 48 hours.",
+    "transit": "2/5",
+    "cutOff": "12:00 PM",
+    "coverage": "120",
+    "overview": "<h2>How we run it.</h2><p>When a production line is waiting or a launch date is fixed, the plan matters more than the plane. We hold allocations with core carriers out of Dhaka and Singapore, build consolidations daily, and hand cargo to our own clearance team before wheels touch down.</p>",
+    "includedServices": [
+      "Express & consolidated uplift",
+      "Charter capacity for project cargo",
+      "IATA dangerous-goods handling",
+      "Temperature-sensitive shipments",
+      "Door-to-door with final mile"
+    ],
+    "mainImage": "/images/cms/service-air-freights-main.webp",
+    "image": "/images/cms/service-air-freights.webp",
+    "logoWhite": "/images/cms/service-air-freights-logo-white.png",
+    "logoBlack": "/images/cms/service-air-freights-logo-black.png",
+    "approach": "<h2>Speed is planned, not rushed.</h2><p>Fast freight fails when it depends on luck at the counter. Our air product is built on capacity we already hold and paperwork that is already filed.</p>",
+    "approachCards": [
+      {
+        "title": "Capacity before demand",
+        "summary": "Daily allocations held with core carriers out of Dhaka and Singapore — your booking confirms in minutes, not after a rate hunt."
+      },
+      {
+        "title": "One tender, one handler",
+        "summary": "Cargo is tendered once, flies under our house air waybill, and is met on arrival by our own clearance team. No blind handoffs."
+      },
+      {
+        "title": "Exceptions, pre-empted",
+        "summary": "The network desk watches every leg; a missed connection triggers a rebooking before the aircraft lands, and you hear it from us first."
+      }
+    ],
+    "work": "<h2>Wheels up in four moves.</h2><p>The same fixed sequence on every uplift — express or consolidated — so nothing depends on who is on shift.</p>",
+    "steps": [
+      {
+        "title": "Book & consolidate",
+        "summary": "Confirm by 12:00 and your cargo joins the same-day build-up — consolidated where it saves cost, never where it costs the flight."
+      },
+      {
+        "title": "Uplift & monitor",
+        "summary": "Freight departs on held allocations while the network desk tracks every leg and connection in real time."
+      },
+      {
+        "title": "Pre-clear in flight",
+        "summary": "Customs entries are filed while cargo is airborne, so the shipment releases on arrival — not hours after it."
+      },
+      {
+        "title": "Deliver & confirm",
+        "summary": "Final mile within hours of touchdown, proof of delivery in the platform, and one consolidated invoice behind it."
+      }
+    ],
+    "price": "$18.40",
+    "priceUnit": "/kg chargeable",
+    "availability": "1.2t uplift open",
+    "availabilityDate": "for 16 Sep",
+    "seo": {
+      "metaTitle": "Air Freight Services | CargoHype",
+      "metaDescription": "Priority uplift on scheduled and charter capacity for time-critical cargo, with door-to-door transit from 48 hours and entries filed while you fly."
+    }
+  },
+  {
+    "title": "Road Freight",
+    "slug": "road-freight",
+    "serialNumber": "02",
+    "summary": "Scheduled FTL and LTL departures across our road corridors, with cross-border paperwork filed before the vehicle reaches",
+    "transit": "3/9",
+    "cutOff": "4:00 PM",
+    "coverage": "34",
+    "overview": "<h2>How we run it.</h2><p>Overland moves are won and lost at borders, not on the motorway. We run scheduled FTL and LTL departures on fixed corridors with contracted fleet partners, and our own clearance team files the transit documents before the vehicle reaches the frontier.</p>",
+    "includedServices": [
+      "FTL on scheduled departures",
+      "LTL groupage, three times weekly",
+      "Cross-border transit documentation",
+      "Temperature-controlled trailers",
+      "Last-mile delivery on timed slots"
+    ],
+    "mainImage": "/images/cms/service-road-freight-main.webp",
+    "image": "/images/cms/service-road-freight.webp",
+    "logoWhite": "/images/cms/service-road-freight-logo-white.png",
+    "logoBlack": "/images/cms/service-road-freight-logo-black.png",
+    "approach": "<h2>The border is the schedule.</h2><p>Distance is predictable; paperwork is not. We treat every crossing as a planned event with documents filed in advance, so the queue is someone else's problem.</p>",
+    "approachCards": [
+      {
+        "title": "Fixed departures, not 'when full'",
+        "summary": "Scheduled trucking means a departure date you can plan around, whether the trailer is full or not."
+      },
+      {
+        "title": "Papers before the frontier",
+        "summary": "Transit and customs documents are filed while the vehicle is still loading, so crossings are a formality rather than a wait."
+      },
+      {
+        "title": "One driver, one file",
+        "summary": "Every load runs against a single file from collection to delivery, with driver, seal numbers and timings recorded on it."
+      }
+    ],
+    "work": "<h2>Four stages, one corridor.</h2><p>The same sequence on every lane, so a driver change or a border delay never resets the plan.</p>",
+    "steps": [
+      {
+        "title": "Plan & book",
+        "summary": "Lane, trailer type and departure slot are fixed at booking, with the crossing chosen for the cargo rather than the shortest line on the map."
+      },
+      {
+        "title": "Collect & seal",
+        "summary": "Loading is supervised and sealed, with seal numbers and load photos on the file before the vehicle leaves."
+      },
+      {
+        "title": "Run & cross",
+        "summary": "Transit documents are pre-filed and the vehicle is tracked leg by leg, including driver rest and border waiting time."
+      },
+      {
+        "title": "Deliver & close",
+        "summary": "Final mile is booked to a timed slot, with proof of delivery and one invoice for the whole corridor."
+      }
+    ],
+    "price": "$699",
+    "priceUnit": "/100 miles",
+    "availability": "5m space open",
+    "availabilityDate": "for 2 Sep",
+    "seo": {
+      "metaTitle": "Road Freight: Scheduled FTL & LTL | CargoHype",
+      "metaDescription": "Scheduled FTL and LTL departures across our road corridors, with transit and customs paperwork filed before the vehicle ever reaches the frontier."
+    }
+  },
+  {
+    "title": "Ocean freight",
+    "slug": "ocean-freight",
+    "serialNumber": "03",
+    "summary": "FCL and LCL sailings on all major trade lanes, with guaranteed space agreements and predictable weekly departures.",
+    "transit": "18/32",
+    "cutOff": "10:00 AM",
+    "coverage": "140",
+    "overview": "<h2>How we run it.</h2><p>Ocean is a game of dates, not speed. We book against blocked space on weekly sailings out of Chattogram, Singapore and Rotterdam, protect the booking with the carrier rather than the spot market, and file the entry while the box is still at sea.</p>",
+    "includedServices": [
+      "FCL on fixed weekly sailings",
+      "LCL consolidation, twice weekly",
+      "Reefer and controlled-atmosphere",
+      "Out-of-gauge and breakbulk",
+      "Port-to-door with inland haulage"
+    ],
+    "mainImage": "/images/cms/service-ocean-freight-main.webp",
+    "image": "/images/cms/service-ocean-freight.webp",
+    "logoWhite": "/images/cms/service-ocean-freight-logo-white.png",
+    "logoBlack": "/images/cms/service-ocean-freight-logo-black.png",
+    "approach": "<h2>Space held, not hunted.</h2><p>A rolled container costs more than a premium rate. We hold allocation on every corridor we sell, so the sailing you were quoted is the sailing you get.</p>",
+    "approachCards": [
+      {
+        "title": "Allocation on the sailing",
+        "summary": "Weekly space is blocked with our core carriers on each corridor — your booking confirms against volume we already own, not a spot search."
+      },
+      {
+        "title": "One box, one owner",
+        "summary": "The same coordinator holds the shipment from stuffing to final delivery, so nothing is renegotiated at a handover."
+      },
+      {
+        "title": "Rolls handled before they happen",
+        "summary": "We watch load lists and terminal cut-offs daily; if a sailing is at risk we move the box to the next confirmed one and tell you first."
+      }
+    ],
+    "work": "<h2>Five weeks, four checkpoints.</h2><p>Long transits fail quietly. We put a fixed checkpoint on every leg so a problem surfaces while there is still time to act on it.</p>",
+    "steps": [
+      {
+        "title": "Book & stuff",
+        "summary": "Confirm against held allocation, then stuff at origin under our supervision with photo evidence attached to the file."
+      },
+      {
+        "title": "Sail & monitor",
+        "summary": "Departure, transhipment and ETA changes are tracked against the original booking, not the latest guess."
+      },
+      {
+        "title": "Pre-clear at sea",
+        "summary": "Entries are filed before berthing so the container releases on discharge instead of sitting in the yard."
+      },
+      {
+        "title": "Haul & confirm",
+        "summary": "Inland haulage is pre-booked to the discharge date, with proof of delivery and one consolidated invoice."
+      }
+    ],
+    "price": "$1,240",
+    "priceUnit": "/40ft container",
+    "availability": "6 slots open",
+    "availabilityDate": "for 22 Sep",
+    "seo": {
+      "metaTitle": "Ocean Freight: FCL & LCL Sailings | CargoHype",
+      "metaDescription": "FCL and LCL sailings on all major trade lanes, with guaranteed space agreements, weekly departures and customs entries filed while the box is at sea."
+    }
+  },
+  {
+    "title": "Warehousing",
+    "slug": "warehousing",
+    "serialNumber": "04",
+    "summary": "Bonded and general storage in Dhaka, Singapore and Rotterdam, with live stock visibility and same-day dispatch before cut-off.",
+    "transit": "1/3",
+    "cutOff": "6:00 PM",
+    "coverage": "12",
+    "overview": "<h2>How we run it.</h2><p>Storage is only useful if the stock figure can be trusted. We run bonded and general warehousing on our own system, count on a rolling daily calendar, and dispatch the same day on anything confirmed before cut-off.</p>",
+    "includedServices": [
+      "Bonded and duty-suspended storage",
+      "Pick, pack and same-day dispatch",
+      "Kitting, relabelling and repack",
+      "Daily cycle counting",
+      "Live stock visibility in the platform"
+    ],
+    "mainImage": "/images/cms/service-warehousing-main.webp",
+    "image": "/images/cms/service-warehousing.webp",
+    "logoWhite": "/images/cms/service-warehousing-logo-white.png",
+    "logoBlack": "/images/cms/service-warehousing-logo-black.png",
+    "approach": "<h2>The number has to be right.</h2><p>Every downstream promise rests on the stock figure. We would rather spend the shift finding the cause of a variance than posting the adjustment.</p>",
+    "approachCards": [
+      {
+        "title": "Counted daily, not annually",
+        "summary": "Every zone is cycle-counted on a rolling calendar, and each variance is investigated to root cause before anything is adjusted."
+      },
+      {
+        "title": "Duty deferred, legitimately",
+        "summary": "Bonded space lets you hold stock in-market without paying duty until it moves — with records that survive an audit."
+      },
+      {
+        "title": "Cut-off means cut-off",
+        "summary": "Orders confirmed before 18:00 leave the same day. If anything threatens that, you hear it from us before the cut-off, not after."
+      }
+    ],
+    "work": "<h2>Receive, hold, release.</h2><p>Four steps from gate-in to gate-out, with the stock record updated at each one rather than at the end of the week.</p>",
+    "steps": [
+      {
+        "title": "Receive & verify",
+        "summary": "Every receipt is counted and inspected against the advance notice, with discrepancies raised the same shift."
+      },
+      {
+        "title": "Put away & slot",
+        "summary": "Stock is slotted by velocity and constraint, so the fastest-moving lines sit where the shortest walk is."
+      },
+      {
+        "title": "Pick & prepare",
+        "summary": "Pick, pack, kit or relabel to your specification, with a quality gate before anything is sealed."
+      },
+      {
+        "title": "Dispatch & update",
+        "summary": "Carrier handover, proof of collection, and the stock figure updated in the platform before the truck leaves the yard."
+      }
+    ],
+    "price": "$21",
+    "priceUnit": "/pallet per week",
+    "availability": "340 pallets free",
+    "availabilityDate": "for 8 Sep",
+    "seo": {
+      "metaTitle": "Bonded & General Warehousing | CargoHype",
+      "metaDescription": "Bonded and general storage in Dhaka, Singapore and Rotterdam, with daily cycle counting, live stock visibility and same-day dispatch before cut-off."
+    }
+  },
+  {
+    "title": "Customs & compliance",
+    "slug": "customs-compliance",
+    "serialNumber": "05",
+    "summary": "In-house licensed brokerage on every corridor we run, with entries filed and duty settled before the cargo arrives.",
+    "transit": "1/2",
+    "cutOff": "9:00 AM",
+    "coverage": "120",
+    "overview": "<h2>How we run it.</h2><p>Clearance problems are born upstream, in a vague description or a document that arrived late. Our own licensed brokers classify, value and file before the cargo lands, so release on arrival is the default rather than the exception.</p>",
+    "includedServices": [
+      "Classification and valuation review",
+      "Import and export entry filing",
+      "Duty, VAT and drawback management",
+      "Dangerous goods documentation",
+      "Audit-ready record retention"
+    ],
+    "mainImage": "/images/cms/service-customs-compliance-main.webp",
+    "image": "/images/cms/service-customs-compliance.webp",
+    "logoWhite": "/images/cms/service-customs-compliance-logo-white.png",
+    "logoBlack": "/images/cms/service-customs-compliance-logo-black.png",
+    "approach": "<h2>Filed before it lands.</h2><p>An entry submitted on arrival is already late. We work from the commercial documents the moment they exist, not the moment the vessel berths.</p>",
+    "approachCards": [
+      {
+        "title": "Our licence, our liability",
+        "summary": "Clearance is handled in-house by our own licensed brokers — not a third party you have never spoken to."
+      },
+      {
+        "title": "Classification, defended",
+        "summary": "Every HS code is reasoned and recorded, so if it is ever questioned we can show the basis rather than rewrite it."
+      },
+      {
+        "title": "No surprise on the invoice",
+        "summary": "Duty, VAT and handling are quoted inside the landed cost. If a surcharge appears afterwards, it is ours to absorb."
+      }
+    ],
+    "work": "<h2>Four filings, no queue.</h2><p>The same sequence on every entry, so nothing depends on which broker happens to be on shift.</p>",
+    "steps": [
+      {
+        "title": "Review documents",
+        "summary": "Commercial invoice, packing list and origin evidence are checked for gaps before anything is submitted."
+      },
+      {
+        "title": "Classify & value",
+        "summary": "HS classification and customs value are set and recorded, with any ruling or preference evidence attached to the file."
+      },
+      {
+        "title": "File & follow",
+        "summary": "The entry is filed ahead of arrival and tracked through to release, with holds and exams answered by us, not by you."
+      },
+      {
+        "title": "Release & retain",
+        "summary": "Cargo releases on arrival, duties are settled on your account, and the full entry pack is retained for audit."
+      }
+    ],
+    "price": "$145",
+    "priceUnit": "/entry filed",
+    "availability": "12 filings open",
+    "availabilityDate": "for 3 Sep",
+    "seo": {
+      "metaTitle": "Customs Clearance & Compliance | CargoHype",
+      "metaDescription": "In-house licensed brokerage on every corridor we run — classification, entry filing and duty settled before cargo arrives, with records kept audit-ready."
+    }
+  }
+]

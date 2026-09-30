@@ -1,0 +1,30 @@
+---
+/**
+ * Primary button with a dot and sliding label ("Book Shipment", "Back Home", …).
+ * Variants: `base` and `brand`.
+ */
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'base' | 'brand';
+}
+
+const { href, label, variant = 'base' } = Astro.props;
+const brand = variant === 'brand';
+const variantClass = 'w-variant-8da26a10-fdcc-5b1f-1453-3c99613c6e6f';
+---
+
+<a
+  href={href}
+  data-wf--primary-button--variant={brand ? 'bg-brand-color' : 'base'}
+  data-wf-component-id="fe6f4be6-50ca-05e1-38e9-9a6e9da8d773"
+  data-wf-variant-state={brand ? '8da26a10-fdcc-5b1f-1453-3c99613c6e6f' : 'base'}
+  class:list={['primary-button bg-brand-color', brand && variantClass, 'w-inline-block']}
+>
+  <div class:list={['button-dot', brand && variantClass]}></div>
+  <div class="button-text-wrap">
+    <div class="button-text is-one">{label}</div>
+    <div class="button-text is-two">{label}</div>
+  </div>
+  <div class="demo">#</div>
+</a>

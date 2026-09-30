@@ -1,0 +1,893 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+import ArrowButton from '../components/ui/ArrowButton.astro';
+import Button from '../components/ui/Button.astro';
+import config from '../config/config.json';
+import { getServices, serviceUrl, getArticles, articleUrl, formatDate } from '../lib/content';
+
+const pageId = config.webflow.pages.home;
+
+// SEC / 03 Service — one slide per service (Webflow: limit 1 / offset N per slide).
+const services = (await getServices()).slice(0, 5);
+
+// SEC / 09 Newsroom — one slide per article, newest five (Webflow: limit 1 / offset N per slide).
+const newsroomArticles = (await getArticles()).slice(0, 5);
+const newsroomSlides = newsroomArticles.length ? newsroomArticles.map((a) => [a]) : [[]];
+---
+
+<BaseLayout pageId={pageId}>
+  <div class="page-wrapper">
+    <div id="home-hero" class="home-hero-area">
+      <Header />
+      <div data-poster-url="/videos/cargohype-metrics-1080p_poster.0000000.jpg" data-video-urls="/videos/cargohype-metrics-1080p_mp4.mp4,/videos/cargohype-metrics-1080p_webm.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video w-background-video w-background-video-atom"><video id="b7c925ba-89c4-bb43-d002-735fb026a251-video" autoplay="" loop="" style="background-image:url(&quot;/videos/cargohype-metrics-1080p_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+          <source src="/videos/cargohype-metrics-1080p_mp4.mp4" data-wf-ignore="true">
+          <source src="/videos/cargohype-metrics-1080p_webm.webm" data-wf-ignore="true">
+        </video><noscript>
+          <style is:inline>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="/videos/cargohype-metrics-1080p_poster.0000000.jpg" alt="">
+        </noscript>
+        <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="b7c925ba-89c4-bb43-d002-735fb026a251-video" class="w-backgroundvideo-backgroundvideoplaypausebutton hero-video-icon w-background-video--control"><span class="play-state"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="play-pouse-icon">
+                <g clip-path="url(#clip0_12373_7805)">
+                  <path d="M6 6C6 5.73478 6.10536 5.48043 6.29289 5.29289C6.48043 5.10536 6.73478 5 7 5H9C9.26522 5 9.51957 5.10536 9.70711 5.29289C9.89464 5.48043 10 5.73478 10 6V18C10 18.2652 9.89464 18.5196 9.70711 18.7071C9.51957 18.8946 9.26522 19 9 19H7C6.73478 19 6.48043 18.8946 6.29289 18.7071C6.10536 18.5196 6 18.2652 6 18V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M14 6C14 5.73478 14.1054 5.48043 14.2929 5.29289C14.4804 5.10536 14.7348 5 15 5H17C17.2652 5 17.5196 5.10536 17.7071 5.29289C17.8946 5.48043 18 5.73478 18 6V18C18 18.2652 17.8946 18.5196 17.7071 18.7071C17.5196 18.8946 17.2652 19 17 19H15C14.7348 19 14.4804 18.8946 14.2929 18.7071C14.1054 18.5196 14 18.2652 14 18V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_12373_7805">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg></span><span hidden="" class="play-state"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="play-pouse-icon">
+                <path d="M18.8906 12.846C18.5371 14.189 16.8667 15.138 13.5257 17.0361C10.296 18.8709 8.6812 19.7884 7.37983 19.4196C6.8418 19.2671 6.35159 18.9776 5.95624 18.5787C5 17.6139 5 15.7426 5 12C5 8.2574 5 6.3861 5.95624 5.42132C6.35159 5.02245 6.8418 4.73288 7.37983 4.58042C8.6812 4.21165 10.296 5.12907 13.5257 6.96393C16.8667 8.86197 18.5371 9.811 18.8906 11.154C19.0365 11.7084 19.0365 12.2916 18.8906 12.846Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              </svg></span></button></div>
+      </div>
+      <section class="section home-hero">
+        <div class="section-gap home-hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <section class="hero-wrapper">
+              <div class="hero-inner">
+                <div class="hero-content">
+                  <div class="home-hero-badge">
+                    <div class="hero-badge-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 10H17.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M10 17.5V2.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M6.25 6.25L13.75 13.75" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M6.25 13.75L13.75 6.25" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="hero-badge-text">Voted #1 Logistics Partner for 2026</div>
+                  </div>
+                  <div class="hero-text-wrap">
+                    <h1 class="home-hero-title">Freight that moves on your schedule.</h1>
+                    <p class="home-hero-summary">End-to-end freight solutions that scale with your ambitions. Air, ocean, and road — we move cargo across 50+ countries with precision and speed.</p>
+                  </div>
+                  <div class="hero-button-wrap">
+                    <Button href="/contact" label="Book Shipment" />
+                  </div>
+                </div>
+                <div class="hero-bottom-row">
+                  <div class="tracking-tab-wrap">
+                    <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tracking-tab-main w-tabs">
+                      <div class="tracking-tab-menu w-tab-menu">
+                        <a data-w-tab="Tab 1" class="tracking-tab w-inline-block w-tab-link w--current">
+                          <div>Tracking</div>
+                        </a>
+                        <a data-w-tab="Tab 2" class="tracking-tab w-inline-block w-tab-link">
+                          <div>Schedules</div>
+                        </a>
+                      </div>
+                      <div class="w-tab-content">
+                        <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                          <div class="tracking-body">
+                            <div class="tracking-head">
+                              <div class="tracking-head-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="16" height="16" rx="8" fill="#EA580C" fill-opacity="0.24"></rect>
+                                  <circle cx="8" cy="8" r="4" fill="#EA580C"></circle>
+                                </svg></div>
+                              <h2 class="tracking-head-title">Tracking Order</h2>
+                            </div>
+                            <div class="hero-form w-form">
+                              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="hero-from-block" data-wf-page-id="6abb298d9171ad26f9b240cf" data-wf-element-id="ceb2d5de-2058-2bb5-77f4-b588dee576ad">
+                                <div class="hero-form-group"><label for="name" class="hero-form-field-text">Tracking ID *</label><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="#456933369" type="text" id="name"></div><input type="submit" data-wait="Please wait..." class="form-button w-button" value="Submit">
+                              </form>
+                              <div class="success-message w-form-done">
+                                <div>Thank you! Your submission has been received!</div>
+                              </div>
+                              <div class="error-message w-form-fail">
+                                <div>Oops! Something went wrong while submitting the form.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div data-w-tab="Tab 2" class="w-tab-pane">
+                          <div class="tracking-body _02">
+                            <div class="tracking-head _02">
+                              <div class="tracking-list-wrap">
+                                <div class="tracking-subtitle">TKY — Kyoto</div>
+                                <div class="tracking-text">ETA 10 days · Some delays anticipated</div>
+                              </div>
+                              <div class="tracking-list-wrap">
+                                <div class="tracking-subtitle">TKY — Osaka</div>
+                                <div class="tracking-text">ETA 12 days · Slight delays possible</div>
+                              </div>
+                              <div class="tracking-list-wrap">
+                                <div class="tracking-subtitle">TKY — Nagoya</div>
+                                <div class="tracking-text">ETA 15 days · Minor delays expected</div>
+                              </div>
+                              <div class="tracking-list-wrap">
+                                <div class="tracking-subtitle">TKY — Sapporo</div>
+                                <div class="tracking-text">ETA 11 days · Delays may occur</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-scroll">
+                <div class="hero-scroll-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 13L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6 13L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="hero-scroll-text">Scroll to stay on route</div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <div class="home-hero-overlay"></div>
+    </div>
+    <div class="main">
+      <section class="section network">
+        <div class="section-gap">
+          <div class="marque-badge-wrap">
+            <div to-top-0="" class="hero-badge light">
+              <div class="badge-dot deep"></div>
+              <div class="hero-badge-text light">Trusted by leading companies</div>
+            </div>
+          </div>
+          <div to-top-0="" class="marque-wrap">
+            <div class="marque-list"><img src="/images/logoipsum-330-1-1_1logoipsum-330-1-1.webp" loading="lazy" alt="Logoipsum text in gray with a symmetrical abstract geometric symbol to the left." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"><img src="/images/logoipsum-311-1_1logoipsum-311-1.webp" loading="lazy" alt="Text logo displaying the word &#x27;IPSUM&#x27; in bold, gray uppercase letters with a unique modern font style, including a dot above the letter M." class="company-logo"><img src="/images/logoipsum-331-1_1logoipsum-331-1.webp" loading="lazy" alt="Logo design featuring a large gray semicircle above black lowercase letters spelling &#x27;logo&#x27; with a small gray dot to the right and the word &#x27;ipsum&#x27; in smaller gray lowercase letters below." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-287-1_1logoipsum-287-1.webp" loading="lazy" alt="Logo Ipsum brand logo with stylized globe symbol to the left and the text &#x27;logo ipsum&#x27; to the right in gray." class="company-logo"><img src="/images/logoipsum-330-1-1_1logoipsum-330-1-1.webp" loading="lazy" alt="Logoipsum text in gray with a symmetrical abstract geometric symbol to the left." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"></div>
+            <div class="marque-list"><img src="/images/logoipsum-330-1-1_1logoipsum-330-1-1.webp" loading="lazy" alt="Logoipsum text in gray with a symmetrical abstract geometric symbol to the left." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"><img src="/images/logoipsum-311-1_1logoipsum-311-1.webp" loading="lazy" alt="Text logo displaying the word &#x27;IPSUM&#x27; in bold, gray uppercase letters with a unique modern font style, including a dot above the letter M." class="company-logo"><img src="/images/logoipsum-331-1_1logoipsum-331-1.webp" loading="lazy" alt="Logo design featuring a large gray semicircle above black lowercase letters spelling &#x27;logo&#x27; with a small gray dot to the right and the word &#x27;ipsum&#x27; in smaller gray lowercase letters below." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-287-1_1logoipsum-287-1.webp" loading="lazy" alt="Logo Ipsum brand logo with stylized globe symbol to the left and the text &#x27;logo ipsum&#x27; to the right in gray." class="company-logo"><img src="/images/logoipsum-330-1-1_1logoipsum-330-1-1.webp" loading="lazy" alt="Logoipsum text in gray with a symmetrical abstract geometric symbol to the left." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"><img src="/images/logoipsum-332-1-2.webp" loading="lazy" alt="The word &#x27;logo&#x27; written in lowercase gray letters with a gray dot above the last &#x27;o&#x27;." class="company-logo"><img src="/images/logoipsum-280-1_1logoipsum-280-1.webp" loading="lazy" alt="Abstract logo with three interconnected gray loops forming a continuous chain-like shape." class="company-logo"></div>
+            <div class="marque-overlay"></div>
+            <div class="marque-overlay right"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section network">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="destinations-wrap">
+              <div class="destinations-head">
+                <div class="hero-badge light">
+                  <div class="badge-dot deep"></div>
+                  <div class="hero-badge-text light">SEC / 02 Global network</div>
+                </div>
+                <div class="destination-header">
+                  <div class="destinations-head-right">
+                    <div class="destination-heading-wrap">
+                      <div class="destinations-title-wrap">
+                        <h2 class="section-title">Six hubs, one</h2><img src="/images/Rectangle-8_1Rectangle-8.webp" loading="lazy" alt="Stacked shipping containers in various faded colors including yellow, beige, and red, with some rust marks and identification codes visible." class="small-image">
+                        <h2 class="section-title">owned corridor,</h2>
+                      </div>
+                      <div class="destinations-title-wrap">
+                        <h2 class="section-title">every major trade lane.</h2><img src="/images/Rectangle-8-1_1Rectangle-8-1.webp" loading="lazy" alt="Assorted suitcase shapes and sizes arranged together in shades of blue, gray, and orange with rounded top corners." class="small-image">
+                      </div>
+                    </div>
+                    <div class="max-width-40">
+                      <p to-top-0="" class="section-paragraph">Guaranteed space on the Dhaka–Rotterdam corridor, extended worldwide through vetted partner lanes — monitored and rerouted in real time from our network desk.</p>
+                    </div>
+                    <div class="destination-button-wrap">
+                      <div to-top-0="">
+                        <Button href="/contact" label="Book Shipment" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div to-top-0="" class="destinations-map-wrap"><img src="/images/world-map.webp" loading="lazy" sizes="(max-width: 1689px) 100vw, 1689px" srcset="/images/world-map-p-500.webp 500w, /images/world-map.webp 1689w" alt="Dotted world map showing CargoHype trade lanes" class="destinations-map-image">
+          <div class="destination-card _01">
+            <p class="destination-card-label">Destination</p>
+            <div class="destination-card-title">TKY — Tokyo</div>
+            <p class="destination-card-label">ETA 14 days · Slightly delayed</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destination-card _02">
+            <p class="destination-card-label">Origin</p>
+            <div class="destination-card-title">DAC — Dhaka</div>
+            <p class="destination-card-label">Dep 04:20 UTC</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destination-card _03">
+            <p class="destination-card-label">Destination</p>
+            <div class="destination-card-title">LON — London</div>
+            <p class="destination-card-label">ETA 9 days · On schedule</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destination-card _04">
+            <p class="destination-card-label">Destination</p>
+            <div class="destination-card-title">SFO — San RTM — Rotterdam</div>
+            <p class="destination-card-label">ETA 11 days · On time</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destination-card _05">
+            <p class="destination-card-label">Destination</p>
+            <div class="destination-card-title">NYC — New York City</div>
+            <p class="destination-card-label">ETA 7 days · Ahead of schedule</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destination-card _06">
+            <p class="destination-card-label">Destination</p>
+            <div class="destination-card-title">SFO — San Francisco</div>
+            <p class="destination-card-label">ETA 10 days · On time</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="map-pointer">
+              <path d="M0 8.48535L8.48528 7.16822e-05L16.9706 8.48535L9.19239 16.2635C8.80186 16.654 8.1687 16.654 7.77817 16.2635L0 8.48535Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="destinations-stats-list">
+            <p class="destinations-stats-item">06 regional hubs</p>
+            <p class="destinations-stats-item">40+ weekly sailings</p>
+            <p class="destinations-stats-item">128 partner lanes</p>
+            <p class="destinations-stats-item">Network desk — 24/7 UTC</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="section-head service">
+              <div class="section-badge">
+                <div class="badge-dot deep"></div>
+                <div class="hero-badge-text light">SEC / 03 Service</div>
+              </div>
+              <div class="service-title-wrap">
+                <h2 class="section-title center">Every mode, one manifest. Your cargo, handled end to end.</h2>
+              </div>
+              <div class="max-width-40">
+                <p class="section-paragraph center">Guaranteed space on the Dhaka–Rotterdam corridor, extended worldwide through vetted partner lanes — monitored and rerouted in real time from our network desk.</p>
+              </div>
+            </div>
+            <div data-delay="4000" data-animation="slide" class="service-slider w-slider" data-autoplay="false" to-top-0="" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+              <div class="service-slider-mask w-slider-mask">
+                {services.map((service) => (
+                <div class="service-slide w-slide">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                          <div class="service-item-top">
+                            <div class="service-item-dot"></div>
+                            <p class="service-item-number">{service.serialNumber}</p>
+                          </div>
+                          <div class="service-image-wrap"><img src={service.logoBlack} loading="lazy" alt={service.title} class="service-item-image black"><img src={service.logoWhite} loading="lazy" alt={service.title} class="service-item-image white">
+                            <div class="service-blury-overlay"></div>
+                            <div class="service-button-wrap">
+                              <ArrowButton href={serviceUrl(service.slug)} label="View Details" variant="black" />
+                            </div>
+                          </div>
+                          <div class="service-item-text">
+                            <div class="service-item-title">{service.title}</div>
+                            <p class="service-item-paragraph">{service.summary}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                ))}
+              </div>
+              <div class="service-nav-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="service-nav-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="hide w-slider-nav w-round w-num"></div>
+            </div>
+            <div class="service-wrap"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section whte-50">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="about-wrap">
+              <div class="about-head">
+                <div class="about-head-row">
+                  <div class="about-head-left">
+                    <div class="about-badge badge">
+                      <div class="badge-dot deep"></div>
+                      <div class="hero-badge-text small">EST. 2011 — DHAKA / SINGAPORE / ROTTERDAM</div>
+                    </div>
+                    <h2 class="section-title">Built by operators, not aggregators.</h2>
+                  </div>
+                  <div class="about-head-right">
+                    <p class="section-paragraph">We started on the loading dock, not in a boardroom. Fifteen years later, the same people who booked our first container still review every routing decision — because reliability is a habit, not a feature.</p>
+                    <Button href="/contact" label="Get a Quote" variant="brand" />
+                  </div>
+                </div>
+              </div>
+              <div class="about-media-sticky">
+                <div to-top-0="" class="about-body">
+                  <div class="about-body-left">
+                    <div class="about-numer-wrap">
+                      <p class="about-number _01">01</p>
+                      <p class="about-number _02">02</p>
+                      <p class="about-number _03">03</p>
+                    </div>
+                  </div>
+                  <div class="media-list-wrap">
+                    <div class="about-media-list">
+                      <div class="about-media-card"><img src="/images/Rectangle-15-30-1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-30-1-p-500.webp 500w, /images/Rectangle-15-30-1-p-800.webp 800w, /images/Rectangle-15-30-1-p-1080.webp 1080w, /images/Rectangle-15-30-1.webp 1665w" alt="Container port on the Asia-Europe lane" class="about-media-image">
+                        <p class="about-media-text">On the Asia–Europe lane, so peak season never surprises you.</p>
+                      </div>
+                      <div class="about-media-card"><img src="/images/Rectangle-15-1_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-1_1-p-500.webp 500w, /images/Rectangle-15-1_1-p-800.webp 800w, /images/Rectangle-15-1_1-p-1080.webp 1080w, /images/Rectangle-15-1_1-p-1600.webp 1600w, /images/Rectangle-15-1_1.webp 1665w" alt="Warehouse operator labelling a carton" class="about-media-image">
+                        <p class="about-media-text">Per account, reachable day and night.</p>
+                      </div>
+                      <div class="about-media-card"><img src="/images/Rectangle-15-31.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-31-p-500.webp 500w, /images/Rectangle-15-31-p-800.webp 800w, /images/Rectangle-15-31-p-1080.webp 1080w, /images/Rectangle-15-31-p-1600.webp 1600w, /images/Rectangle-15-31.webp 1665w" alt="Network desk monitoring shipments" class="about-media-image">
+                        <p class="about-media-text">Available 24/7 for your convenience.</p>
+                      </div>
+                    </div>
+                    <div class="media-overlay top"></div>
+                    <div class="media-overlay bottom"></div>
+                  </div>
+                  <div class="about-feature-list">
+                    <div class="about-feature-item">
+                      <div class="about-feature-dot _01"></div>
+                      <p class="about-feature-title _01">Owned capacity</p>
+                    </div>
+                    <div class="about-feature-divider _01"></div>
+                    <div class="about-feature-item">
+                      <div class="about-feature-dot _02"></div>
+                      <p class="about-feature-title _02">One dedicated coordinator</p>
+                    </div>
+                    <div class="about-feature-divider _02"></div>
+                    <div class="about-feature-item">
+                      <div class="about-feature-dot _03"></div>
+                      <p class="about-feature-title _03">Carbon reporting</p>
+                    </div>
+                  </div>
+                </div>
+                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="about-tab w-tabs">
+                  <div to-top-0="" class="tab-menu w-tab-menu">
+                    <a data-w-tab="Tab 1" class="about-link w-inline-block w-tab-link w--current">
+                      <div class="project-link-item-wrap">
+                        <div class="squre-dot"></div>
+                        <div>Owned capacity</div>
+                      </div>
+                    </a>
+                    <a data-w-tab="Tab 2" class="about-link w-inline-block w-tab-link">
+                      <div class="project-link-item-wrap">
+                        <div class="squre-dot"></div>
+                        <div>One dedicated coordinator</div>
+                      </div>
+                    </a>
+                    <a data-w-tab="Tab 3" class="about-link w-inline-block w-tab-link">
+                      <div class="project-link-item-wrap">
+                        <div class="squre-dot"></div>
+                        <div>Carbon reporting</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div to-top-0="" class="w-tab-content">
+                    <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                      <div class="about-media-card"><img src="/images/Rectangle-15-30-1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-30-1-p-500.webp 500w, /images/Rectangle-15-30-1-p-800.webp 800w, /images/Rectangle-15-30-1-p-1080.webp 1080w, /images/Rectangle-15-30-1.webp 1665w" alt="Container port on the Asia-Europe lane" class="about-media-image">
+                        <p class="about-media-text">On the Asia–Europe lane, so peak season never surprises you.</p>
+                      </div>
+                    </div>
+                    <div data-w-tab="Tab 2" class="w-tab-pane">
+                      <div class="about-media-card"><img src="/images/Rectangle-15-1_1.webp" loading="lazy" sizes="100vw" srcset="/images/Rectangle-15-1_1-p-500.webp 500w, /images/Rectangle-15-1_1-p-800.webp 800w, /images/Rectangle-15-1_1-p-1080.webp 1080w, /images/Rectangle-15-1_1-p-1600.webp 1600w, /images/Rectangle-15-1_1.webp 1665w" alt="Warehouse operator labelling a carton" class="about-media-image">
+                        <p class="about-media-text">Per account, reachable day and night.</p>
+                      </div>
+                    </div>
+                    <div data-w-tab="Tab 3" class="w-tab-pane">
+                      <div class="about-media-card"><img src="/images/Rectangle-15-31.webp" loading="lazy" sizes="100vw" srcset="/images/Rectangle-15-31-p-500.webp 500w, /images/Rectangle-15-31-p-800.webp 800w, /images/Rectangle-15-31-p-1080.webp 1080w, /images/Rectangle-15-31-p-1600.webp 1600w, /images/Rectangle-15-31.webp 1665w" alt="Network desk monitoring shipments" class="about-media-image">
+                        <p class="about-media-text">Available 24/7 for your convenience.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section dark">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="process-wrap">
+              <div class="section-head">
+                <div class="section-badge dark">
+                  <div class="process-step-icon"></div>
+                  <div class="section-badge-text inverse">SEC / 05 How we work</div>
+                </div>
+                <div class="section-head-row">
+                  <div class="section-head-left">
+                    <h2 class="section-title inverse">From quote to delivery in three moves.</h2>
+                  </div>
+                  <div class="section-head-right">
+                    <p class="section-paragraph inverse">A fixed sequence with no surprises — you&#x27;ll know the status, the cost, and the ETA at every stage.</p>
+                    <div to-top-0="">
+                      <Button href="/contact" label="Get a Quote" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="process-sticky">
+                <div class="process-grid">
+                  <div class="process-step one">
+                    <div class="process-step-top">
+                      <div class="process-step-icon _01"></div>
+                      <div class="process-step-top-text">Step 01</div>
+                      <div class="process-line-wrap">
+                        <div class="process-line _01"></div>
+                      </div>
+                    </div><img src="/images/Rectangle-15-1-1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-1-1-p-500.webp 500w, /images/Rectangle-15-1-1-p-800.webp 800w, /images/Rectangle-15-1-1-p-1080.webp 1080w, /images/Rectangle-15-1-1-p-1600.webp 1600w, /images/Rectangle-15-1-1.webp 1728w" alt="A man in a brown blazer standing and pointing at a rolled-out architectural blueprint while four people in business attire sit around the table attentively discussing the plans." class="process-step-image">
+                    <div class="process-step-bottom">
+                      <div class="process-step-title">Plan</div>
+                      <p class="process-step-text">Share your cargo details and we return a routed quote — mode, transit time, and landed cost — within one business day.</p>
+                    </div>
+                  </div>
+                  <div class="process-step two">
+                    <div class="process-step-top muted">
+                      <div class="process-step-icon muted _02"></div>
+                      <div class="process-step-top-text">Step 02</div>
+                      <div class="process-line-wrap">
+                        <div class="process-line _02"></div>
+                      </div>
+                    </div><img src="/images/Rectangle-15-3.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-3-p-500.webp 500w, /images/Rectangle-15-3-p-800.webp 800w, /images/Rectangle-15-3-p-1080.webp 1080w, /images/Rectangle-15-3.webp 1152w" alt="Man operating a forklift inside a warehouse with shelves stocked with boxes." class="process-step-image">
+                    <div class="process-step-bottom">
+                      <div class="process-step-title">Move</div>
+                      <p class="process-step-text">We book capacity, prepare documentation, and clear customs pre-arrival while you track everything live.</p>
+                    </div>
+                  </div>
+                  <div class="process-step three">
+                    <div class="process-step-top muted">
+                      <div class="process-step-icon muted _03"></div>
+                      <div class="process-step-top-text">Step 03</div>
+                      <div class="process-line-wrap">
+                        <div class="process-line _03"></div>
+                      </div>
+                    </div><img src="/images/Rectangle-15-5.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-5-p-500.webp 500w, /images/Rectangle-15-5-p-800.webp 800w, /images/Rectangle-15-5-p-1080.webp 1080w, /images/Rectangle-15-5.webp 1152w" alt="Flatbed truck carrying large stacks of wrapped lumber or panels secured with straps, driving on a road at sunset." class="process-step-image">
+                    <div class="process-step-bottom">
+                      <div class="process-step-title">Deliver</div>
+                      <p class="process-step-text">Final-mile delivery with proof of receipt, followed by a single consolidated invoice — no hidden surcharges.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="platform-wrap">
+              <div class="platform-left">
+                <div class="section-badge">
+                  <div class="badge-dot"></div>
+                  <div class="section-badge-text">SEC / 06 The platform</div>
+                </div>
+                <div class="platform-copy-wrap">
+                  <div class="max-width-30">
+                    <h2 class="section-title">Every container, one screen.</h2>
+                  </div>
+                  <p to-top-0="" class="section-paragraph">Track shipments across carriers in real time, pull customs documents in two clicks, and get exception alerts before they become delays. Your whole team, your whole supply chain, one login.</p>
+                </div>
+                <a to-top-0="" href="/contact" class="hero-button light w-inline-block">
+                  <div class="button-dot"></div>
+                  <div class="button-text-pill">
+                    <div class="hero-button-text is-one">Get a Quote</div>
+                    <div class="hero-button-text is-two">Get a Quote</div>
+                  </div>
+                </a>
+              </div>
+              <div to-top-0="" class="platform-panel-wrap">
+                <div class="platform-panel">
+                  <div class="platform-panel-top">
+                    <div class="platform-panel-icon"></div>
+                    <div class="platform-panel-icon two"></div>
+                    <div class="platform-panel-icon three"></div>
+                  </div>
+                  <div class="platform-panel-body">
+                    <div class="platform-row">
+                      <div class="platform-row-text muted">Shipment</div>
+                      <div class="platform-row-text">CH-88041-RTM</div>
+                    </div>
+                    <div class="platform-row">
+                      <div class="platform-row-text muted">Vessel</div>
+                      <div class="platform-row-text">MV Meridian Star / V.114W</div>
+                    </div>
+                    <div class="platform-row">
+                      <div class="platform-row-text muted">Position</div>
+                      <div class="platform-row-text _03">12.42°N 063.71°E</div>
+                    </div>
+                    <div class="platform-row">
+                      <div class="platform-row-text muted">Customs</div>
+                      <div class="platform-row-text _04">● Pre-cleared</div>
+                    </div>
+                    <div class="platform-row">
+                      <div class="platform-row-text muted">ETA Rotterdam</div>
+                      <div class="platform-row-text">Aug 02 — 06:00</div>
+                    </div>
+                    <div class="platform-row last">
+                      <div class="platform-row-text muted">Status</div>
+                      <div class="platform-row-text _04">On schedule</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="client-wrap">
+              <div class="section-head">
+                <div class="section-badge white">
+                  <div class="badge-dot"></div>
+                  <div class="section-badge-text">SEC / 07 Client note</div>
+                </div>
+                <div class="section-head-row">
+                  <div class="section-head-left testimonial">
+                    <h2 class="section-title">What say our Customers</h2>
+                  </div>
+                  <div class="section-head-right">
+                    <p class="section-paragraph">We don&#x27;t collect testimonials — we collect renewal contracts. But this note stuck with us.</p>
+                  </div>
+                </div>
+              </div>
+              <div data-delay="4000" data-animation="cross" class="review-slider w-slider" data-autoplay="false" to-top-0="" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+                <div class="w-slider-mask">
+                  <div class="review-slide w-slide">
+                    <div class="client-card _01">
+                      <div class="client-card-top">
+                        <div class="review-top-left">
+                          <div class="client-card-icon"></div>
+                          <div class="client-card-top-text white">01</div>
+                        </div>
+                        <div class="client-card-top-text white"><span class="muted">Location:</span> Hable Point, Germany</div>
+                        <div class="client-card-top-text"><span class="muted">Date:</span><span class="muted"> 12 July 2026</span></div>
+                      </div>
+                      <div class="client-card-bottom">
+                        <div class="client-author-item"><img src="/images/Rectangle-15-7-2.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-7-2-p-500.webp 500w, /images/Rectangle-15-7-2-p-800.webp 800w, /images/Rectangle-15-7-2-p-1080.webp 1080w, /images/Rectangle-15-7-2.webp 1458w" alt="A woman in a pink shirt smiles warmly as she receives a package from a delivery person wearing a blue uniform at her door." class="client-author-image">
+                          <div class="client-author-bottom">
+                            <div class="client-author-title">Nadia Rahman</div>
+                            <p class="client-author-text">Head of Supply Chain, Meridian Apparel Group</p>
+                          </div>
+                        </div>
+                        <div class="client-quote-wrap">
+                          <div class="client-quote-block">
+                            <p class="client-quote-text">Testimonials</p>
+                            <div class="client-quote-title">“They treat our cargo like it&#x27;s theirs — we stopped checking tracking pages because nothing slips.”</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-slide w-slide">
+                    <div class="client-card">
+                      <div class="client-card-top">
+                        <div class="review-top-left">
+                          <div class="client-card-icon"></div>
+                          <div class="client-card-top-text white">02</div>
+                        </div>
+                        <div class="client-card-top-text white">Location: Austin, Texas</div>
+                        <div class="client-card-top-text">Date: 18 July 2026</div>
+                      </div>
+                      <div class="client-card-bottom">
+                        <div class="client-author-item"><img src="/images/Rectangle-15-7_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-7_1-p-500.webp 500w, /images/Rectangle-15-7_1-p-800.webp 800w, /images/Rectangle-15-7_1-p-1080.webp 1080w, /images/Rectangle-15-7_1.webp 1458w" alt="Delivery person in a red cap and vest handing a cardboard box to a young man in a white shirt with a pink collar and pocket, both focused on the package." class="client-author-image">
+                          <div class="client-author-bottom">
+                            <div class="client-author-title">Courtney Henry</div>
+                            <p class="client-author-text">Officer</p>
+                          </div>
+                        </div>
+                        <div class="client-quote-wrap">
+                          <div class="client-quote-block">
+                            <p class="client-quote-text">Testimonials</p>
+                            <div class="client-quote-title">&quot;Our cargo is treated with utmost respect, as if it belongs to them. We stopped monitoring tracking pages because nothing ever goes missing.&quot;</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-slide w-slide">
+                    <div class="client-card _03">
+                      <div class="client-card-top">
+                        <div class="review-top-left">
+                          <div class="client-card-icon"></div>
+                          <div class="client-card-top-text white">03</div>
+                        </div>
+                        <div class="client-card-top-text white">Location: Denver, Colorado<br></div>
+                        <div class="client-card-top-text">Date: 24 July 2026</div>
+                      </div>
+                      <div class="client-card-bottom">
+                        <div class="client-author-item"><img src="/images/Rectangle-15-8_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-8_1-p-500.webp 500w, /images/Rectangle-15-8_1-p-800.webp 800w, /images/Rectangle-15-8_1-p-1080.webp 1080w, /images/Rectangle-15-8_1.webp 1458w" alt="Woman with two long braids wearing a beige zip-up jacket, holding a large cream-colored box with a dark blue lid against a night sky background." class="client-author-image">
+                          <div class="client-author-bottom">
+                            <div class="client-author-title">Bessie Cooper</div>
+                            <p class="client-author-text">Executive</p>
+                          </div>
+                        </div>
+                        <div class="client-quote-wrap">
+                          <div class="client-quote-block">
+                            <p class="client-quote-text">Testimonials</p>
+                            <div class="client-quote-title">&quot;They manage our freight like it&#x27;s their own property. We&#x27;ve stopped following tracking updates since everything is always delivered perfectly.&quot;</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-slide w-slide">
+                    <div class="client-card _04">
+                      <div class="client-card-top">
+                        <div class="review-top-left">
+                          <div class="client-card-icon"></div>
+                          <div class="client-card-top-text white">04</div>
+                        </div>
+                        <div class="client-card-top-text white">Location: Miami, Florida<br></div>
+                        <div class="client-card-top-text">Date: 02 August 2026</div>
+                      </div>
+                      <div class="client-card-bottom">
+                        <div class="client-author-item"><img src="/images/Rectangle-15-9_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-9_1-p-500.webp 500w, /images/Rectangle-15-9_1-p-800.webp 800w, /images/Rectangle-15-9_1-p-1080.webp 1080w, /images/Rectangle-15-9_1.webp 1458w" alt="A delivery worker in a yellow safety vest hands a package to a woman wearing a white shirt, both looking at the package." class="client-author-image">
+                          <div class="client-author-bottom">
+                            <div class="client-author-title">Jane Cooper</div>
+                            <p class="client-author-text">Public Relationship Officer</p>
+                          </div>
+                        </div>
+                        <div class="client-quote-wrap">
+                          <div class="client-quote-block">
+                            <p class="client-quote-text">Testimonials</p>
+                            <div class="client-quote-title">&quot;Our shipments are handled with such care, it feels like they own them. We&#x27;ve given up on tracking updates because everything arrives on time.&quot;</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-slide w-slide">
+                    <div class="client-card _05">
+                      <div class="client-card-top">
+                        <div class="review-top-left">
+                          <div class="client-card-icon"></div>
+                          <div class="client-card-top-text white">05</div>
+                        </div>
+                        <div class="client-card-top-text white">Location: Seattle, Washington<br></div>
+                        <div class="client-card-top-text">Date: 12 August 2026</div>
+                      </div>
+                      <div class="client-card-bottom">
+                        <div class="client-author-item"><img src="/images/Rectangle-15-10_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-10_1-p-500.webp 500w, /images/Rectangle-15-10_1-p-800.webp 800w, /images/Rectangle-15-10_1-p-1080.webp 1080w, /images/Rectangle-15-10_1.webp 1458w" alt="A delivery man in a yellow cap and reflective vest explaining something while gesturing with his hands to a woman holding a cardboard box, both standing against a light blue background." class="client-author-image">
+                          <div class="client-author-bottom">
+                            <div class="client-author-title">Jacob Jones</div>
+                            <p class="client-author-text">Manager</p>
+                          </div>
+                        </div>
+                        <div class="client-quote-wrap">
+                          <div class="client-quote-block">
+                            <p class="client-quote-text">Testimonials</p>
+                            <div class="client-quote-title">&quot;They handle our deliveries as if they were their own. We no longer check tracking info since everything arrives flawlessly.&quot;</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="client-nav-item left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="client-nav-icon">
+                    <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="client-nav-item right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="client-nav-icon">
+                    <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="hide w-slider-nav w-round w-num"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-gap metrics">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="metrics-wrap">
+              <div class="section-head metrics">
+                <div class="section-badge">
+                  <div class="badge-dot deep"></div>
+                  <div class="section-badge-text">SEC / 08 Key Matrics</div>
+                </div>
+                <div class="metrics-head-text">
+                  <h2 class="section-title metric">Your cutting-edge technology and creative problem-solving transform</h2>
+                  <div class="max-width-44">
+                    <p class="section-paragraph">Track shipments across carriers in real time, pull customs documents in two clicks, and get exception alerts before they become delays. Your whole team, your whole supply chain, one login.</p>
+                  </div>
+                </div>
+                <div to-top-0="" class="button-wrap">
+                  <ArrowButton href="/contact" label="Get a Quote" variant="brand" />
+                </div>
+              </div>
+              <div class="metrics-list">
+                <div to-top-0="" class="metrics-item">
+                  <div class="metrics-value-wrap">
+                    <div data-counter="counter" class="metrics-value">120</div>
+                    <p class="metrics-value-accent">+</p>
+                  </div>
+                  <p class="metrics-label">Countries served</p>
+                </div>
+                <div class="metrics-divider"></div>
+                <div to-top-0="" class="metrics-item">
+                  <div class="metrics-value-wrap">
+                    <div data-counter="counter" class="metrics-value">98.4</div>
+                    <p class="metrics-value-accent">%</p>
+                  </div>
+                  <p class="metrics-label">On-time delivery rate</p>
+                </div>
+                <div class="metrics-divider"></div>
+                <div to-top-0="" id="w-node-_6df2d5cf-3f4b-7583-b1fd-b5a2977a85c0-f9b240cf" class="metrics-item">
+                  <div class="metrics-value-wrap">
+                    <div data-counter="counter" class="metrics-value">2.1M</div>
+                  </div>
+                  <p class="metrics-label">Shipments handled to date</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-sticky-wrap">
+            <div class="video-sticky">
+              <div class="specialty-media-v3">
+                <div class="metrics-media">
+                  <div data-poster-url="/videos/cargohype-hero-1080p_poster.0000000.jpg" data-video-urls="/videos/cargohype-hero-1080p_mp4.mp4,/videos/cargohype-hero-1080p_webm.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="metrics-media-image w-background-video w-background-video-atom"><video id="bb3466aa-a9a3-4cb1-e2cf-f300c746b926-video" autoplay="" loop="" style="background-image:url(&quot;/videos/cargohype-hero-1080p_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                      <source src="/videos/cargohype-hero-1080p_mp4.mp4" data-wf-ignore="true">
+                      <source src="/videos/cargohype-hero-1080p_webm.webm" data-wf-ignore="true">
+                    </video><noscript>
+                      <style is:inline>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="/videos/cargohype-hero-1080p_poster.0000000.jpg" alt="">
+                    </noscript>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="bb3466aa-a9a3-4cb1-e2cf-f300c746b926-video" class="w-backgroundvideo-backgroundvideoplaypausebutton video-button-v1 w-background-video--control"><span><img src="/images/icons8-pause-48.webp" loading="lazy" alt="Pause video" class="play-pouse-icon"></span><span hidden=""><img loading="lazy" alt="Play video" src="/images/icons8-play-48-1.webp" class="play-pouse-icon"></span></button></div>
+                  </div>
+                  <div class="metrics-quote-card">
+                    <p class="metrics-quote-text">Track shipments across carriers in real time, pull customs documents in two clicks, and get exception alerts before they become delays. Your whole team, your whole supply chain, one login.</p>
+                    <div class="metrics-quote-bottom">
+                      <div class="metrics-quote-author-wrap">
+                        <div class="metrics-quote-name">Nadia Rahman</div>
+                        <p class="metrics-quote-role">CEO, Cargo Hype</p>
+                      </div><img src="/images/Rectangle-15-5_1.webp" loading="lazy" sizes="(max-width: 1314px) 100vw, 1314px" srcset="/images/Rectangle-15-5_1-p-500.webp 500w, /images/Rectangle-15-5_1-p-800.webp 800w, /images/Rectangle-15-5_1-p-1080.webp 1080w, /images/Rectangle-15-5_1.webp 1314w" alt="Smiling man with light brown hair wearing a dark gray suit jacket and white dress shirt against a plain gray background." class="metrics-quote-image">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section whte-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="newsroom-wrap">
+              <div class="newsroom-head">
+                <div class="section-head blog">
+                  <div class="section-badge white">
+                    <div class="badge-dot"></div>
+                    <div class="section-badge-text">SEC / 09 Newsroom</div>
+                  </div>
+                  <h2 class="section-title">From the operations floor.</h2>
+                </div>
+                <div to-top-4="" class="newsroom-head-right">
+                  <div class="max-width-23">
+                    <p class="section-paragraph">Dive into the latest stories, trends, and innovations shaping global commerce and logistics.</p>
+                  </div>
+                  <Button href="/newsroom" label="View all articles" variant="brand" />
+                </div>
+              </div>
+              <div data-delay="4000" data-animation="slide" class="service-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+                <div class="blog-slider-mask w-slider-mask">
+                  {newsroomSlides.map((items) => (
+                  <div class="blog-slide w-slide">
+                    <div class="w-dyn-list">
+                      <div role="list" class="w-dyn-items">
+                        {items.map((a) => (
+                        <div role="listitem" class="w-dyn-item">
+                          <div class="newsroom-card">
+                            <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image"></a>
+                            <div class="newsroom-card-body">
+                              <div class="newsroom-card-top">
+                                <div class="newsroom-card-category">
+                                  <div class="newsroom-card-category-icon"></div>
+                                  <p class="newsroom-card-category-text">{a.category}</p>
+                                </div>
+                                <a href={articleUrl(a.slug)} class="blog-text-link w-inline-block">
+                                  <div class="newsroom-card-title">{a.title}</div>
+                                  <div class="demo">#</div>
+                                </a>
+                                <p class="newsroom-card-text">{a.summary}</p>
+                              </div>
+                              <div class="newsroom-card-bottom">
+                                <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                                <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                                  <p class="newsroom-card-link-text">Read Article</p>
+                                  <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                      <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                      <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div class="button-animated-line"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        ))}
+                      </div>
+                      {items.length === 0 && (
+                      <div class="w-dyn-empty">
+                        <div>No items found.</div>
+                      </div>
+                      )}
+                    </div>
+                  </div>
+                  ))}
+                </div>
+                <div class="blog-slider-button let w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                    <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="blog-slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                    <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="slider-nav hide-mobile w-slider-nav w-slider-nav-invert w-num"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Faq />
+      <Cta />
+    </div>
+    <Footer backTo="home-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

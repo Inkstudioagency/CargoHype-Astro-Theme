@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import config from '../config/config.json';
+
+const pageId = config.webflow.pages.contact;
+---
+
+<BaseLayout pageId={pageId} title="Contact" description="The contact page in the CargoHype Astro theme - enquiry form, office addresses and a map block wired up and ready for your own details.">
+  <div class="page-wrapper">
+    <div id="contact-hero" class="contact-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <div class="hero-badge-text uppercase">PAGE / 06 CONTACT</div>
+              </div>
+              <div class="about-head-row">
+                <h1 class="hero-title">Let&#x27;s move something.</h1>
+                <div class="about-head-right">
+                  <p class="hero-paragraph contact-summary">Tell us what you&#x27;re shipping and where it needs to be. A coordinator replies with routing options and a landed cost within one business day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main">
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="w-layout-grid contact-grid">
+              <div class="contact-video-wrap">
+                <div class="video-overlay"></div>
+                <div data-poster-url="/videos/10451891-hd_1440_2560_30fps_poster.0000000.jpg" data-video-urls="/videos/10451891-hd_1440_2560_30fps_mp4.mp4,/videos/10451891-hd_1440_2560_30fps_webm.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="contact-video w-background-video w-background-video-atom"><video id="c4b95ca6-109a-5c5e-0f0b-314bab8f887c-video" autoplay="" loop="" style="background-image:url(&quot;/videos/10451891-hd_1440_2560_30fps_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="/videos/10451891-hd_1440_2560_30fps_mp4.mp4" data-wf-ignore="true">
+                    <source src="/videos/10451891-hd_1440_2560_30fps_webm.webm" data-wf-ignore="true">
+                  </video><noscript>
+                    <style is:inline>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="/videos/10451891-hd_1440_2560_30fps_poster.0000000.jpg" alt="">
+                  </noscript>
+                  <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="c4b95ca6-109a-5c5e-0f0b-314bab8f887c-video" class="w-backgroundvideo-backgroundvideoplaypausebutton video-button w-background-video--control"><span><img src="/images/icons8-pause-48.webp" loading="lazy" alt="Pause video" class="play-pouse-icon"></span><span hidden=""><img loading="lazy" alt="Play video" src="/images/icons8-play-48-1.webp" class="play-pouse-icon"></span></button></div>
+                </div>
+                <div class="contact-subtitle">As soon as possible contact us</div>
+              </div>
+              <div class="contact-right">
+                <div class="section-badge contact">
+                  <div class="badge-dot deep"></div>
+                  <div class="hero-badge-text contact">RFQ / REQUEST FOR QUOTE</div>
+                </div>
+                <div class="contact-form-main w-form">
+                  <form id="email-form" name="email-form" data-name="Email Form" method="get" class="contact-form" data-wf-page-id="6abb298d9171ad26f9b240de" data-wf-element-id="c5255cb6-b48d-70f0-7f02-95a7636b93da">
+                    <div class="form-field-list">
+                      <div class="form-field-wrap"><label for="Frst-Name" class="field-lavel">First Name<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="Frst-Name" data-name="Frst Name" placeholder="Enter your first name" type="text" id="Frst-Name" required=""></div>
+                      <div class="form-field-wrap"><label for="Last-Name" class="field-lavel">Last Name<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="Last-Name" data-name="Last Name*" placeholder="Enter your last name" type="text" id="Last-Name" required=""></div>
+                    </div>
+                    <div class="form-field-list">
+                      <div class="form-field-wrap"><label for="Email" class="field-lavel">Email Address<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Enter your email" type="email" id="Email" required=""></div>
+                      <div class="form-field-wrap"><label for="Company" class="field-lavel">Company<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="Company" data-name="Company" placeholder="Company type" type="text" id="Company"></div>
+                    </div>
+                    <div class="form-field-list">
+                      <div class="form-field-wrap"><label for="Origin" class="field-lavel">Origin<span class="star">*</span></label><select id="Origin" name="Origin" data-name="Origin" class="selet-field select w-select">
+                          <option value="">DAC — Example</option>
+                          <option value="First">Residential Roofing</option>
+                          <option value="Second">Commercial Roofing</option>
+                          <option value="Third">Retail Roofing</option>
+                          <option value="Four">Industrial Roofing</option>
+                        </select></div>
+                      <div class="form-field-wrap"><label for="Destination" class="field-lavel">Destination<span class="star">*</span></label><select id="Destination" name="Destination" data-name="Destination" class="selet-field select w-select">
+                          <option value="">RTM — Example</option>
+                          <option value="First">Residential Roofing</option>
+                          <option value="Second">Commercial Roofing</option>
+                          <option value="Third">Retail Roofing</option>
+                          <option value="Four">Industrial Roofing</option>
+                        </select></div>
+                    </div>
+                    <div class="form-field-list">
+                      <div class="form-field-wrap"><label for="Service" class="field-lavel">Mode<span class="star">*</span></label><select id="Service" name="Service" data-name="Service" class="selet-field select w-select">
+                          <option value="">Select one</option>
+                          <option value="First">Residential Roofing</option>
+                          <option value="Second">Commercial Roofing</option>
+                          <option value="Third">Retail Roofing</option>
+                          <option value="Four">Industrial Roofing</option>
+                        </select></div>
+                      <div class="form-field-wrap"><label for="Date" class="field-lavel">Ready Date<span class="star">*</span></label><select id="Date" name="Date" data-name="Date" class="selet-field select w-select">
+                          <option value="">26 Aug 2026</option>
+                          <option value="First">27 Aug 2026</option>
+                          <option value="Second">28 Aug 2026</option>
+                          <option value="Third">29 Aug 2026</option>
+                          <option value="Four">30 Aug 2026</option>
+                        </select></div>
+                    </div>
+                    <div class="form-field-list _1-colom">
+                      <div class="form-field-wrap"><label for="field" class="field-lavel">Note<span class="star">*</span></label><textarea placeholder="Tell Us about your project" maxlength="5000" id="field" name="field" data-name="Field" class="form-text-field message-area w-input"></textarea></div>
+                    </div>
+                    <div class="submit-button-wrap"><input type="submit" data-wait="Please wait..." class="contact-form-button w-button" value="Send request">
+                      <div class="contact-small-text">Response within one business day . Files can be attached by reply.</div>
+                    </div>
+                  </form>
+                  <div class="success-message w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="error-message w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="section-head">
+              <div class="contact-header">
+                <div class="section-badge">
+                  <div class="badge-dot deep"></div>
+                  <div class="section-badge-text">SEC / 08 NEWSROOM</div>
+                </div>
+                <h2 class="section-title">Office Address</h2>
+              </div>
+            </div>
+            <div class="w-layout-grid contact-card-wrapper">
+              <div to-top-0="" class="contact-card">
+                <div class="contact-card-top">
+                  <div class="contact-card-title">DAC — Example · HQ</div>
+                  <div class="contact-location-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="location-icon">
+                      <g clip-path="url(#clip0_10211_1784)">
+                        <path d="M9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.414 20.9L17.657 16.657C18.7758 15.5381 19.5377 14.1127 19.8463 12.5608C20.155 11.009 19.9965 9.40047 19.391 7.93868C18.7855 6.4769 17.7601 5.22749 16.4445 4.34846C15.1289 3.46943 13.5822 3.00024 12 3.00024C10.4178 3.00024 8.87107 3.46943 7.55548 4.34846C6.2399 5.22749 5.21452 6.4769 4.60901 7.93868C4.00349 9.40047 3.84504 11.009 4.15369 12.5608C4.46234 14.1127 5.22422 15.5381 6.343 16.657L10.587 20.9C10.962 21.2746 11.4704 21.485 12.0005 21.485C12.5306 21.485 13.039 21.2746 13.414 20.9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_10211_1784">
+                          <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div class="font-regular black-700">House 42, Road 11, Example 1213, Example</div>
+                  </div>
+                </div>
+                <div class="contact-card-bottom">
+                  <a href="tel:+12345678910" class="contact-link">+12345678910</a>
+                  <a href="https://maps.app.goo.gl/aDQ39NgQvvvA7GiM8" target="_blank" class="newsroom-card-link w-inline-block">
+                    <p class="newsroom-card-link-text">DEP DESK 04:00–22:00 +06</p>
+                    <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="button-animated-line"></div>
+                  </a>
+                </div>
+              </div>
+              <div to-top-2="" class="contact-card">
+                <div class="contact-card-top">
+                  <div class="contact-card-title">SIN — Example</div>
+                  <div class="contact-location-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="location-icon">
+                      <g clip-path="url(#clip0_10211_1784)">
+                        <path d="M9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.414 20.9L17.657 16.657C18.7758 15.5381 19.5377 14.1127 19.8463 12.5608C20.155 11.009 19.9965 9.40047 19.391 7.93868C18.7855 6.4769 17.7601 5.22749 16.4445 4.34846C15.1289 3.46943 13.5822 3.00024 12 3.00024C10.4178 3.00024 8.87107 3.46943 7.55548 4.34846C6.2399 5.22749 5.21452 6.4769 4.60901 7.93868C4.00349 9.40047 3.84504 11.009 4.15369 12.5608C4.46234 14.1127 5.22422 15.5381 6.343 16.657L10.587 20.9C10.962 21.2746 11.4704 21.485 12.0005 21.485C12.5306 21.485 13.039 21.2746 13.414 20.9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_10211_1784">
+                          <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div class="font-regular black-700">7 Example Loop, #08-02 Singapore 099012</div>
+                  </div>
+                </div>
+                <div class="contact-card-bottom">
+                  <a href="tel:+12345678910" class="contact-link">+12345678910</a>
+                  <a href="https://maps.app.goo.gl/Y5yGA6FpKz5MtWxY8" target="_blank" class="newsroom-card-link w-inline-block">
+                    <p class="newsroom-card-link-text">TRANSSHIPMENT 24/7 +08</p>
+                    <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="button-animated-line"></div>
+                  </a>
+                </div>
+              </div>
+              <div to-top-4="" class="contact-card">
+                <div class="contact-card-top">
+                  <div class="contact-card-title">RTM — Example</div>
+                  <div class="contact-location-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="location-icon">
+                      <g clip-path="url(#clip0_10211_1784)">
+                        <path d="M9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13.414 20.9L17.657 16.657C18.7758 15.5381 19.5377 14.1127 19.8463 12.5608C20.155 11.009 19.9965 9.40047 19.391 7.93868C18.7855 6.4769 17.7601 5.22749 16.4445 4.34846C15.1289 3.46943 13.5822 3.00024 12 3.00024C10.4178 3.00024 8.87107 3.46943 7.55548 4.34846C6.2399 5.22749 5.21452 6.4769 4.60901 7.93868C4.00349 9.40047 3.84504 11.009 4.15369 12.5608C4.46234 14.1127 5.22422 15.5381 6.343 16.657L10.587 20.9C10.962 21.2746 11.4704 21.485 12.0005 21.485C12.5306 21.485 13.039 21.2746 13.414 20.9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_10211_1784">
+                          <rect width="24" height="24" fill="currentColor"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div class="font-regular black-700">Example Z.z. 19 3089 JH Rotterdam, NL</div>
+                  </div>
+                </div>
+                <div class="contact-card-bottom">
+                  <a href="tel:+12345678910" class="contact-link">+12345678910</a>
+                  <a href="https://maps.app.goo.gl/Md8ocWoogaxCNua3A" target="_blank" class="newsroom-card-link w-inline-block">
+                    <p class="newsroom-card-link-text">EU CLEARANCE 08:00–18:00 CET</p>
+                    <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="button-animated-line"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Cta />
+    </div>
+    <Footer backTo="contact-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

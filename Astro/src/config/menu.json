@@ -1,0 +1,31 @@
+{
+  "main": [
+    { "name": "Services", "url": "/services" },
+    { "name": "Company", "url": "/about-us" },
+    { "name": "Careers", "url": "/careers" },
+    { "name": "Pricing", "url": "/pricing" },
+    { "name": "Newsroom", "url": "/newsroom" },
+    { "name": "Contact", "url": "/contact" }
+  ],
+  "cta": { "name": "Get a Quote", "url": "/contact" },
+  "footer": {
+    "company": {
+      "label": "Company",
+      "links": [
+        { "name": "About", "url": "/about-us" },
+        { "name": "Services", "url": "/services" },
+        { "name": "Career", "url": "/careers" },
+        { "name": "Pricing", "url": "/pricing" },
+        { "name": "Newsroom", "url": "/newsroom" }
+      ]
+    },
+    "services": { "label": "Services" },
+    "utility": {
+      "label": "Utility pages",
+      "links": [
+        { "name": "Style Guide", "url": "/style-guide" },
+        { "name": "404 Not Found", "url": "/404" }
+      ]
+    }
+  }
+}

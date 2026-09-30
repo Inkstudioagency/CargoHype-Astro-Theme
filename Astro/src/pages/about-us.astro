@@ -1,0 +1,526 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import config from '../config/config.json';
+
+const pageId = config.webflow.pages.about;
+---
+
+<BaseLayout pageId={pageId} title="About Us" description="The About page layout in the CargoHype Astro theme - company story, network stats, team profiles and office locations, all easy to edit.">
+  <div class="page-wrapper">
+    <div id="about-hero" class="about-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="hero-badge">
+                <div class="badge-dot deep"></div>
+                <div class="hero-badge-text uppercase">PAGE / 03 COMPANY</div>
+              </div>
+              <div class="about-head-row">
+                <div class="hero-text-wrap about-us">
+                  <h1 class="hero-title">The people behind the manifest.</h1>
+                </div>
+                <div class="about-head-right">
+                  <p class="hero-paragraph about-hero-summary">Founded on a Dhaka loading dock in 2011. Today: three offices, six hubs, and a network desk that never sleeps — still run by the people who move the cargo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main">
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="story-wrap">
+              <div class="story-left-main">
+                <div class="story-left">
+                  <div data-wf-target="[[[&quot;6abb298d9171ad26f9b240d9&quot;,&quot;d849220a-5b1e-564d-31ef-f05def1479ad&quot;],[]]]" class="section-badge white">
+                    <div class="badge-dot deep"></div>
+                    <div class="section-badge-text">SEC / 01 OUR STORY</div>
+                  </div>
+                  <div class="story-left-content">
+                    <h2 data-wf-target="[[[&quot;6abb298d9171ad26f9b240d9&quot;,&quot;61114bc3-4150-1b2e-5c65-b58c07e27746&quot;],[]]]" class="section-title story">Every container, one screen.</h2>
+                    <div class="max-width-48">
+                      <p data-wf-target="[[[&quot;6abb298d9171ad26f9b240d9&quot;,&quot;6a3d3308-ea57-ac9a-d481-ba1ce64a2c81&quot;],[]]]" class="section-paragraph center">Track shipments across carriers in real time, pull customs documents in two clicks, and get exception alerts before they become delays. Your whole team, your whole supply chain, one login.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div to-top-0="" class="story-timeline">
+                <div class="story-track">
+                  <div data-delay="100" data-animation="slide" class="story-slider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="1" data-nav-spacing="3" data-duration="500" data-infinite="true">
+                    <div class="story-slider-mask w-slider-mask">
+                      <div class="story-slide w-slide">
+                        <div class="story-card">
+                          <div class="story-card-head">
+                            <div class="story-card-title">First container booked</div>
+                          </div>
+                          <div class="story-card-media"><img src="/images/Rectangle-15_2.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15_2-p-500.webp 500w, /images/Rectangle-15_2-p-800.webp 800w, /images/Rectangle-15_2-p-1080.webp 1080w, /images/Rectangle-15_2-p-1600.webp 1600w, /images/Rectangle-15_2.webp 1614w" alt="A delivery man wearing a yellow jacket and cap standing in front of a pallet with cardboard boxes at an industrial loading dock with closed yellow doors." class="metrics-media-image"></div>
+                          <div class="story-card-body">
+                            <p class="section-paragraph">One desk, one lane, one promise: the shipper always knows where their cargo is.</p>
+                            <div class="story-card-meta">
+                              <div class="story-card-date">January 14, 2026</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="story-slide w-slide">
+                        <div class="story-card">
+                          <div class="story-card-head">
+                            <div class="story-card-title">Container booking confirmed</div>
+                          </div>
+                          <div class="story-card-media"><img src="/images/Rectangle-15-1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-1-p-500.webp 500w, /images/Rectangle-15-1-p-800.webp 800w, /images/Rectangle-15-1-p-1080.webp 1080w, /images/Rectangle-15-1.webp 1437w" alt="A shipping container is being lifted by a crane at a port next to a large cargo ship with stacks of containers on both the ship and the dock under a clear sky." class="metrics-media-image"></div>
+                          <div class="story-card-body">
+                            <p class="section-paragraph">Single point of contact, single route, one guarantee: shippers always track their cargo.</p>
+                            <div class="story-card-meta">
+                              <div class="story-card-date">14 January 2026</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="story-slide w-slide">
+                        <div class="story-card">
+                          <div class="story-card-head">
+                            <div class="story-card-title">Your container reservation is secured.</div>
+                          </div>
+                          <div class="story-card-media"><img src="/images/Rectangle-15-33.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-33-p-500.webp 500w, /images/Rectangle-15-33-p-800.webp 800w, /images/Rectangle-15-33-p-1080.webp 1080w, /images/Rectangle-15-33.webp 1576w" alt="Man pushing a hand truck loaded with a cardboard box through an aisle in a warehouse filled with stacked cardboard boxes on industrial shelving." class="metrics-media-image"></div>
+                          <div class="story-card-body">
+                            <p class="section-paragraph">Enjoy smooth shipping with one contact, a clear route, and always traceable cargo.</p>
+                            <div class="story-card-meta">
+                              <div class="story-card-date">January 14, 2026</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="story-slider-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="slider-arrow">
+                        <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="story-slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="slider-arrow">
+                        <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="hide w-slider-nav w-round w-num"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section tech">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="tech-wrap">
+            <div class="tech-left-main">
+              <div class="w-layout-grid tech-grid">
+                <div class="tech-line"></div>
+                <div class="tech-line"></div>
+                <div class="tech-line hide-mobile"></div>
+              </div>
+              <div class="tech-left">
+                <div class="section-head">
+                  <div class="section-badge dark">
+                    <div class="badge-dot"></div>
+                    <div class="section-badge-text inverse">SEC / 02 TECH-FORWARD</div>
+                  </div>
+                  <div class="hero-text-wrap large">
+                    <h2 class="section-title inverse">Transforming global supply chains with smart, real-time freight intelligence.</h2>
+                    <p class="section-paragraph inverse">Leverage next-generation automation and predictive routing to minimize transit friction and reduce operational costs. We empower growing brands to scale seamlessly with complete supply chain visibility at every step.</p>
+                  </div>
+                </div>
+                <div class="metrics-list stacked">
+                  <div to-top-0="" class="metrics-item left">
+                    <div class="metrics-value-wrap left">
+                      <div data-counter="counter" class="metrics-value inverse">120</div>
+                      <div class="metrics-value-accent">+</div>
+                    </div>
+                    <div class="metrics-label inverse">Countries served</div>
+                  </div>
+                  <div to-top-2="" class="metrics-item left">
+                    <div class="metrics-value-wrap left">
+                      <div data-counter="counter" class="metrics-value-v2 inverse">98.4</div>
+                      <div class="metrics-value-accent">%</div>
+                    </div>
+                    <div class="metrics-label inverse">On-time delivery rate</div>
+                  </div>
+                  <div to-top-4="" class="metrics-item left">
+                    <div class="metrics-value-wrap left">
+                      <div data-counter="counter" class="metrics-value inverse">2.1</div>
+                      <div class="metrics-value-accent">M</div>
+                    </div>
+                    <div class="metrics-label inverse">Shipments handled to date</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tech-media"><img src="/images/Frame-37.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Frame-37-p-500.webp 500w, /images/Frame-37-p-800.webp 800w, /images/Frame-37-p-1080.webp 1080w, /images/Frame-37.webp 1392w" alt="Four large white semi trucks parked at loading docks of a modern warehouse building under clear blue sky, with yellow road lines and puddles reflecting the trucks and building in the foreground." class="metrics-media-image"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="mission-wrap">
+              <div class="section-head center">
+                <div class="section-badge white">
+                  <div class="section-badge-icon w-embed"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
+                    </svg></div>
+                  <div class="section-badge-text">SEC / 03 MISSION &amp; VISION</div>
+                </div>
+                <h2 class="section-title">Why this company exists.</h2>
+              </div>
+              <div class="mission-grid">
+                <div to-top-0="" class="mission-card">
+                  <div class="mission-card-top">
+                    <div class="mission-card-marker"></div>
+                    <div class="mission-card-label">01 / Mission</div>
+                  </div>
+                  <div class="mission-card-body">
+                    <div class="mission-card-icon w-embed"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#mv-mission)">
+                          <path d="M36.668 40.0001C36.668 40.8841 37.0192 41.732 37.6443 42.3571C38.2694 42.9822 39.1172 43.3334 40.0013 43.3334C40.8854 43.3334 41.7332 42.9822 42.3583 42.3571C42.9834 41.732 43.3346 40.8841 43.3346 40.0001C43.3346 39.116 42.9834 38.2682 42.3583 37.6431C41.7332 37.0179 40.8854 36.6667 40.0013 36.6667C39.1172 36.6667 38.2694 37.0179 37.6443 37.6431C37.0192 38.2682 36.668 39.116 36.668 40.0001Z" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M39.9987 23.3333C36.7024 23.3333 33.48 24.3107 30.7392 26.1421C27.9984 27.9734 25.8622 30.5764 24.6007 33.6219C23.3393 36.6673 23.0092 40.0184 23.6523 43.2514C24.2954 46.4844 25.8827 49.4542 28.2136 51.785C30.5445 54.1159 33.5142 55.7033 36.7472 56.3463C39.9802 56.9894 43.3313 56.6594 46.3768 55.3979C49.4222 54.1365 52.0252 52.0002 53.8565 49.2594C55.6879 46.5186 56.6654 43.2963 56.6654 39.9999" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M43.3349 10.1829C37.1551 9.48961 30.9126 10.7338 25.4709 13.7435C20.0292 16.7531 15.6572 21.3794 12.9597 26.9824C10.2622 32.5855 9.37256 38.8883 10.4138 45.019C11.455 51.1498 14.3757 56.8055 18.7717 61.2037C23.1678 65.602 28.822 68.5255 34.9522 69.5698C41.0825 70.6141 47.3857 69.7276 52.9901 67.033C58.5945 64.3383 63.223 59.9686 66.2353 54.5284C69.2477 49.0882 70.4951 42.8464 69.8049 36.6662" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M50 20V30H60L70 20H60V10L50 20Z" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M50 30L40 40" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="mv-mission">
+                            <rect width="80" height="80" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg></div>
+                    <div class="mission-card-text-wrap">
+                      <div class="mission-card-title">Move the world&#x27;s goods with the reliability of a timetable.</div>
+                      <p class="mission-card-text">Every improvement we make — owned capacity, pre-arrival clearance, the network desk — exists to make freight behave like a scheduled service, not a gamble.</p>
+                    </div>
+                  </div>
+                </div>
+                <div to-top-2="" class="mission-media"><img src="/images/Rectangle-22.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-22-p-500.webp 500w, /images/Rectangle-22-p-800.webp 800w, /images/Rectangle-22-p-1080.webp 1080w, /images/Rectangle-22.webp 1184w" alt="Large dark ship docked at a harbor with industrial equipment on board and a distant concrete grain elevator marked TMO." class="mission-media-image">
+                  <div class="metrics-quote-card-v2">
+                    <div class="metrics-quote-bottom">
+                      <div class="metrics-quote-author-wrap">
+                        <div class="metrics-quote-name">Nadia Rahman</div>
+                        <p class="metrics-quote-role">CEO, Cargo Hype</p>
+                      </div><img src="/images/Rectangle-15_1Rectangle-15.webp" loading="lazy" alt="Smiling man with light brown hair wearing a dark suit jacket and white shirt against a gray background." class="metrics-quote-image">
+                    </div>
+                  </div>
+                </div>
+                <div to-top-4="" class="mission-card">
+                  <div class="mission-card-top">
+                    <div class="mission-card-marker"></div>
+                    <div class="mission-card-label">02 / Vision</div>
+                  </div>
+                  <div class="mission-card-body">
+                    <div class="mission-card-icon w-embed"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#mv-vision)">
+                          <path d="M33.334 39.9999C33.334 41.768 34.0364 43.4637 35.2866 44.714C36.5368 45.9642 38.2325 46.6666 40.0007 46.6666C41.7688 46.6666 43.4645 45.9642 44.7147 44.714C45.9649 43.4637 46.6673 41.768 46.6673 39.9999C46.6673 38.2318 45.9649 36.5361 44.7147 35.2859C43.4645 34.0356 41.7688 33.3333 40.0007 33.3333C38.2325 33.3333 36.5368 34.0356 35.2866 35.2859C34.0364 36.5361 33.334 38.2318 33.334 39.9999Z" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M41.99 59.9367C41.3275 59.9787 40.6638 59.9998 40 60C28 60 18 53.3333 10 40C18 26.6667 28 20 40 20C52 20 62 26.6667 70 40C69.3167 41.14 68.6167 42.2333 67.9 43.2767" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M53.334 73.3334L70.0007 56.6667" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M70 71.6667V56.6667H55" stroke="currentColor" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="mv-vision">
+                            <rect width="80" height="80" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg></div>
+                    <div class="mission-card-text-wrap">
+                      <div class="mission-card-title">A supply chain where nobody has to ask where their cargo is.</div>
+                      <p class="mission-card-text">We&#x27;re building toward a network where status finds the shipper first: every container visible, every exception answered before the question is typed.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section team">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="team-wrap">
+              <div class="team-content">
+                <div class="section-head">
+                  <div class="section-badge dark">
+                    <div class="section-badge-icon w-embed"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
+                      </svg></div>
+                    <div class="section-badge-text inverse">SEC / 04 Our Team</div>
+                  </div>
+                  <div class="section-head-row">
+                    <div class="section-head-left">
+                      <h2 class="section-title inverse">The people who answer at 02:00 UTC.</h2>
+                    </div>
+                    <div class="section-head-right">
+                      <p class="section-paragraph inverse">Coordinators, brokers, and the network desk — 140 people across three offices, most of whom started on a loading dock or a clearance counter.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-group">
+                  <div to-top-0="" class="team-group-head">
+                    <div class="team-group-title">The Founder</div>
+                  </div>
+                  <div class="team-grid-wrap">
+                    <div class="team-grid">
+                      <div to-top-0="" class="team-card"><img src="/images/Rectangle-15-5_1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-5_1-p-500.webp 500w, /images/Rectangle-15-5_1-p-800.webp 800w, /images/Rectangle-15-5_1-p-1080.webp 1080w, /images/Rectangle-15-5_1.webp 1314w" alt="Smiling man with light brown hair wearing a dark gray suit jacket and white dress shirt against a plain gray background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Liam Carter</div>
+                          <p class="team-card-role">Cargo Hype Founder</p>
+                        </div>
+                      </div>
+                      <div to-top-2="" class="team-card"><img src="/images/Rectangle-15-7.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-7-p-500.webp 500w, /images/Rectangle-15-7-p-800.webp 800w, /images/Rectangle-15-7-p-1080.webp 1080w, /images/Rectangle-15-7.webp 1314w" alt="Smiling young woman with light brown hair tied back, wearing a blue blazer over a white ribbed sweater, with a pen clipped to her blazer pocket, against a plain gray background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Sophia Bennett</div>
+                          <p class="team-card-role">Cargo Hype Founder</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team-arrow-wrap">
+                      <div class="team-arrow-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow">
+                          <g clip-path="url(#clip0_10147_7798)">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_10147_7798">
+                              <rect width="24" height="24" fill="currentColor"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow is-02 hdie-tab">
+                          <g clip-path="url(#clip0_10147_7806)">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_10147_7806">
+                              <rect width="24" height="24" fill="currentColor"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-group">
+                  <div to-top-0="" class="team-group-head">
+                    <div class="team-group-title">The Head</div>
+                  </div>
+                  <div class="team-grid-wrap">
+                    <div class="team-grid">
+                      <div to-top-0="" class="team-card"><img src="/images/Rectangle-15-8.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Rectangle-15-8-p-500.webp 500w, /images/Rectangle-15-8-p-800.webp 800w, /images/Rectangle-15-8-p-1080.webp 1080w, /images/Rectangle-15-8.webp 1314w" alt="Smiling blonde woman with wavy hair wearing a light blue blazer and white blouse, against a gray background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Ethan Johnson</div>
+                          <p class="team-card-role">Operational Head</p>
+                        </div>
+                      </div>
+                      <div to-top-2="" class="team-card"><img src="/images/Rectangle-15-9.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 876px" srcset="/images/Rectangle-15-9-p-500.webp 500w, /images/Rectangle-15-9-p-800.webp 800w, /images/Rectangle-15-9.webp 876w" alt="Close-up portrait of a man with short black hair and beard wearing a white shirt and dark blazer, smiling gently against a plain background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Mason Lee</div>
+                          <p class="team-card-role">Finance Head</p>
+                        </div>
+                      </div>
+                      <div to-top-4="" class="team-card"><img src="/images/Rectangle-15-10.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 876px" srcset="/images/Rectangle-15-10-p-500.webp 500w, /images/Rectangle-15-10-p-800.webp 800w, /images/Rectangle-15-10.webp 876w" alt="Close-up of a smiling young man with curly hair highlighted blond, wearing a dark blazer and looking directly at the camera against a neutral background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Ava Davis</div>
+                          <p class="team-card-role">Marketing Head</p>
+                        </div>
+                      </div>
+                      <div to-top-6="" class="team-card"><img src="/images/Rectangle-15-11.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 876px" srcset="/images/Rectangle-15-11-p-500.webp 500w, /images/Rectangle-15-11-p-800.webp 800w, /images/Rectangle-15-11.webp 876w" alt="Close-up portrait of a smiling woman with short dark hair wearing a beige top and dark gray blazer against a neutral background." class="team-card-image">
+                        <div class="team-card-info">
+                          <div class="team-card-name">Olivia Smith</div>
+                          <p class="team-card-role">Partnership Head</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team-arrow-wrap">
+                      <div class="team-arrow-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow">
+                          <g clip-path="url(#clip0_10147_7798)">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_10147_7798">
+                              <rect width="24" height="24" fill="currentColor"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow is-02 hdie-tab">
+                          <g clip-path="url(#clip0_10147_7806)">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_10147_7806">
+                              <rect width="24" height="24" fill="currentColor"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="why-wrap">
+              <div class="chose-left">
+                <div class="section-head why-choose-us">
+                  <div class="section-badge white">
+                    <div class="section-badge-icon w-embed"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
+                      </svg></div>
+                    <div class="section-badge-text">SEC / 05 Why Choose Us</div>
+                  </div>
+                  <div class="choose-heading-wrap">
+                    <h2 class="section-title">Chosen for the boring reasons.</h2>
+                    <p class="section-paragraph">No pitch decks, no promises we can&#x27;t schedule. Clients stay because the unglamorous things keep happening on time.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="why-list">
+                <div to-top-0="" class="why-item">
+                  <div class="why-item-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">W—01</div>
+                  </div>
+                  <div class="why-item-body">
+                    <div class="why-item-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17 16V7H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="why-item-text">
+                      <div class="why-item-title">Owned capacity on the corridor</div>
+                      <p class="why-item-paragraph">Guaranteed-space contracts on Asia–Europe mean peak season never rolls your booking — the space is ours before it&#x27;s needed.</p>
+                    </div>
+                  </div>
+                </div>
+                <div to-top-0="" class="why-item">
+                  <div class="why-item-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">W—02</div>
+                  </div>
+                  <div class="why-item-body">
+                    <div class="why-item-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17 16V7H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="why-item-text">
+                      <div class="why-item-title">One coordinator, day and night</div>
+                      <p class="why-item-paragraph">A named person owns your account and answers directly — no ticket queues, no re-explaining your cargo to a stranger.</p>
+                    </div>
+                  </div>
+                </div>
+                <div to-top-0="" class="why-item">
+                  <div class="why-item-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">W—03</div>
+                  </div>
+                  <div class="why-item-body">
+                    <div class="why-item-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17 16V7H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="why-item-text">
+                      <div class="why-item-title">One invoice, whole journey</div>
+                      <p class="why-item-paragraph">Landed cost quoted up front: freight, duty, handling, final mile. Surprise surcharges are ours to absorb, not yours to dispute.</p>
+                    </div>
+                  </div>
+                </div>
+                <div to-top-0="" class="why-item">
+                  <div class="why-item-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">W—04</div>
+                  </div>
+                  <div class="why-item-body">
+                    <div class="why-item-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17 16V7H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div class="why-item-text">
+                      <div class="why-item-title">Carbon reporting by default</div>
+                      <p class="why-item-paragraph">Every shipment ships with its emissions figure, and lower-carbon routings are offered wherever the timetable allows.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="rules-wrap">
+              <div class="rules-head-row">
+                <div class="rules-head-left">
+                  <div class="section-badge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 8 8" fill="none" class="badge-dot deep">
+                      <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
+                    </svg>
+                    <div class="section-badge-text">SEC / 06 Global Network</div>
+                  </div>
+                </div>
+                <div class="max-width-30">
+                  <h2 class="section-title center">Three rules we don&#x27;t break.</h2>
+                </div>
+              </div>
+              <div class="w-layout-grid rulls-grid">
+                <div class="rules-card"><img src="/images/Frame-36-1.webp" loading="lazy" sizes="(max-width: 479px) 48vw, (max-width: 767px) 49vw, (max-width: 991px) 356px, 462px" srcset="/images/Frame-36-1-p-500.webp 500w, /images/Frame-36-1-p-800.webp 800w, /images/Frame-36-1-p-1080.webp 1080w, /images/Frame-36-1.webp 1122w" alt="Two men having a serious conversation across a table, one in a black suit and the other in a white shirt." class="ruls-image">
+                  <div class="rules-card-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">Rules No 1</div>
+                  </div>
+                  <div class="rules-card-body">
+                    <div class="why-item-text">
+                      <div class="why-item-title">Answer before asked</div>
+                      <p class="why-item-paragraph">Status updates reach you before you think to check. Silence is the only thing we consider a failure.</p>
+                    </div>
+                  </div>
+                  <div class="rules-card-overlay"></div>
+                </div>
+                <div class="rules-card"><img src="/images/Frame-50-1.webp" loading="lazy" sizes="(max-width: 479px) 48vw, (max-width: 767px) 49vw, (max-width: 991px) 356px, 462px" srcset="/images/Frame-50-1-p-500.webp 500w, /images/Frame-50-1-p-800.webp 800w, /images/Frame-50-1-p-1080.webp 1080w, /images/Frame-50-1.webp 1124w" alt="Close-up of a digital stock trading chart displaying red and blue candlestick patterns and numerical data on a dark background." class="ruls-image">
+                  <div class="rules-card-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">Rules No 2</div>
+                  </div>
+                  <div class="rules-card-body">
+                    <div class="why-item-text">
+                      <div class="why-item-title">Price the whole journey</div>
+                      <p class="why-item-paragraph">One landed cost up front — duty, handling, final mile. If a surcharge appears, it&#x27;s ours to absorb.</p>
+                    </div>
+                  </div>
+                  <div class="rules-card-overlay"></div>
+                </div>
+                <div class="rules-card"><img src="/images/Frame-52.webp" loading="lazy" sizes="(max-width: 479px) 48vw, (max-width: 767px) 49vw, (max-width: 991px) 356px, 462px" srcset="/images/Frame-52-p-500.webp 500w, /images/Frame-52-p-800.webp 800w, /images/Frame-52-p-1080.webp 1080w, /images/Frame-52-p-1600.webp 1600w, /images/Frame-52.webp 1683w" alt="Person wearing a red polo shirt holding a sealed cardboard box against a clear blue sky background." class="ruls-image">
+                  <div class="rules-card-top">
+                    <div class="why-item-marker"></div>
+                    <div class="why-item-number">Rules No 3</div>
+                  </div>
+                  <div class="rules-card-body">
+                    <div class="why-item-text">
+                      <div class="why-item-title">Route for the decade</div>
+                      <p class="why-item-paragraph">We choose partners and lanes we can commit to for years, not the cheapest slot this week.</p>
+                    </div>
+                  </div>
+                  <div class="rules-card-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Cta />
+    </div>
+    <Footer backTo="about-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

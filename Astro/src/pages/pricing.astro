@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import ArrowButton from '../components/ui/ArrowButton.astro';
+import config from '../config/config.json';
+
+const pageId = config.webflow.pages.pricing;
+---
+
+<BaseLayout pageId={pageId} title="Pricing" description="A freight pricing page for the CargoHype Astro theme, with landed-cost tiers, inclusions and an FAQ block you can rewrite in minutes.">
+  <div class="page-wrapper">
+    <div id="Pricing" class="pricing-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="pricing-badge">
+                <div class="badge-dot deep"></div>
+                <div class="hero-badge-text uppercase">PAGE / 07 Pricing</div>
+              </div>
+              <div class="pricing-header">
+                <div class="career-heading-wrap">
+                  <h1 class="pricing-hero-heading">Our Pricing</h1>
+                </div>
+                <div class="about-head-right max-width-18">
+                  <p class="pricing-summary">We help companies reach their full potential. Are you ready to reach yours?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section white-50">
+      <div class="section-gap">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="pricing-wrap">
+            <div class="pricing-head">
+              <div class="section-badge pricing">
+                <div class="badge-dot deep"></div>
+                <div class="section-badge-text">Transportation Pricing</div>
+              </div>
+              <h2 class="pricing-heading">Our Best Pricing</h2>
+            </div>
+            <div class="pricing-grid">
+              <div to-top-0="" class="pricing-card">
+                <div class="pricing-card-head">
+                  <div class="pricing-card-title-row">
+                    <div class="pricing-card-dot"></div>
+                    <div class="font-style-h4">Air freight</div>
+                  </div>
+                  <div class="font-style-body">Road transport has a crucial role in transporting goods and people.</div>
+                </div>
+                <div class="pricing-price-group">
+                  <div class="pricing-price-row">
+                    <div class="pricing-amount">$699</div>
+                    <div class="pricing-small-text">/100 miles</div>
+                  </div>
+                  <div class="pricing-action-row">
+                    <ArrowButton href="/contact" label="GET STARTED" variant="brand" />
+                    <div class="pricing-meta">
+                      <div class="font-style-small primary">/100 miles</div>
+                      <div class="font-style-small">for 2 Sep</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pricing-included">
+                  <div class="pricing-included-head">
+                    <div class="font-style-mono">What&#x27;s included</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Speed and time efficiency</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Varied service levels</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Cost-effective for certain goods</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Cargo security and safety</div>
+                  </div>
+                </div>
+              </div>
+              <div to-top-2="" id="w-node-_1799a9ee-befb-926f-c046-73d157e22709-f9b240e4" class="pricing-card">
+                <div class="pricing-card-head">
+                  <div class="pricing-card-title-row">
+                    <div class="pricing-card-dot"></div>
+                    <div class="font-style-h4">Road freight</div>
+                  </div>
+                  <div class="font-style-body">We make it easy to find storage solutions with air freight.</div>
+                </div>
+                <div class="pricing-price-group">
+                  <div class="pricing-price-row">
+                    <div class="pricing-amount">$199</div>
+                    <div class="pricing-small-text">/100 miles</div>
+                  </div>
+                  <div class="pricing-action-row">
+                    <ArrowButton href="/contact" label="GET STARTED" variant="brand" />
+                    <div class="pricing-meta">
+                      <div class="font-style-small primary">5m space open</div>
+                      <div class="font-style-small">for 2 Sep</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pricing-included">
+                  <div class="pricing-included-head">
+                    <div class="font-style-mono">What&#x27;s included</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Cost flexibility based on distance</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Adaptable to cargo characteristics</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Options for timely deliveries</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Transparent toll charges</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Flexible insurance coverage</div>
+                  </div>
+                </div>
+              </div>
+              <div to-top-4="" class="pricing-card">
+                <div class="pricing-card-head _03">
+                  <div class="pricing-card-title-row">
+                    <div class="pricing-card-dot"></div>
+                    <div>
+                      <h3 class="font-style-h4">Ocean freight</h3>
+                    </div>
+                  </div>
+                  <div class="font-style-body">Global trade efficiently transports diverse cargo across international waters.</div>
+                </div>
+                <div class="pricing-price-group">
+                  <div class="pricing-price-row">
+                    <div class="pricing-amount">$259</div>
+                    <div class="pricing-small-text">/100 miles</div>
+                  </div>
+                  <div class="pricing-action-row">
+                    <ArrowButton href="/contact" label="GET STARTED" variant="brand" />
+                    <div class="pricing-meta">
+                      <div class="font-style-small primary">5m space open</div>
+                      <div class="font-style-small">for 2 Sep</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pricing-included">
+                  <div class="pricing-included-head">
+                    <div class="font-style-mono">What&#x27;s included</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Cost-effective for long distances</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Variety of cargo types</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Flexibility in service options</div>
+                  </div>
+                  <div class="pricing-included-row">
+                    <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg></div>
+                    <div class="font-style-body">Reduced packaging costs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-gap large">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="tariff-layout">
+            <div class="tariff-left">
+              <div class="section-head">
+                <div class="section-badge similar-pricing">
+                  <div class="badge-dot deep"></div>
+                  <div class="section-badge-text">Transportation Pricing</div>
+                </div>
+                <h2 class="section-title">Custom Tariffs</h2>
+              </div>
+              <div to-top-0="" class="tariff-trust">
+                <div class="tariff-avatar-row"><img src="" loading="lazy" alt="" class="tariff-avatar"><img src="" loading="lazy" alt="" class="tariff-avatar"><img src="" loading="lazy" alt="" class="tariff-avatar"><img src="" loading="lazy" alt="" class="tariff-avatar"></div>
+                <div class="review-info-wrap">
+                  <div class="reviewer-img-wrap"><img src="/images/man.webp" loading="lazy" alt="Smiling young man with glasses and wavy brown hair wearing a black shirt in a bright space." class="reviewer-img"><img src="/images/man-.webp" loading="lazy" alt="Young man with medium-length hair stands outdoors in sunlight near trees and water." class="reviewer-img"><img src="/images/Ellipse-3.webp" loading="lazy" alt="Young man with thick black hair and beard wearing a black hoodie, outdoors with blurred background." class="reviewer-img"><img src="/images/Ellipse_1Ellipse.webp" loading="lazy" alt="Smiling woman with dark hair tied in a messy bun wearing a white shirt, against a white background." class="reviewer-img"></div>
+                  <div class="font-style-small primary">Trusted by 500+ founders (4.5/5)</div>
+                </div>
+              </div>
+            </div>
+            <div to-top-0="" class="pricing-card muted">
+              <div class="pricing-card-header">
+                <div class="pricing-card-title-row">
+                  <div class="pricing-card-dot"></div>
+                  <div class="font-style-h4">Customs &amp; compliance</div>
+                </div>
+                <div class="font-style-body">We make it easy to find storage solutions with air freight.</div>
+              </div>
+              <div class="pricing-price-group">
+                <div class="font-style-body primary">Start From</div>
+                <div class="pricing-price-row">
+                  <div class="pricing-amount">$1200</div>
+                  <div class="pricing-small-text">/monthly</div>
+                </div>
+                <div class="pricing-action-row">
+                  <ArrowButton href="/contact" label="SEND REQUEST" variant="brand" />
+                  <div class="pricing-meta">
+                    <div class="font-style-small primary">Response within 24 hours</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pricing-included">
+                <div class="pricing-included-head brand">
+                  <div class="font-style-mono">What&#x27;s included</div>
+                </div>
+                <div class="pricing-included-row">
+                  <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></div>
+                  <div class="font-style-body">Streamlined and unified uplift processes.</div>
+                </div>
+                <div class="pricing-included-row">
+                  <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></div>
+                  <div class="font-style-body">Dedicated charter services for project cargo.</div>
+                </div>
+                <div class="pricing-included-row">
+                  <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></div>
+                  <div class="font-style-body">Expert handling of IATA-regulated dangerous goods.</div>
+                </div>
+                <div class="pricing-included-row">
+                  <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></div>
+                  <div class="font-style-body">Specialized solutions for temperature-sensitive deliveries.</div>
+                </div>
+                <div class="pricing-included-row">
+                  <div class="pricing-included-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4V20M5.0718 8L18.9282 16M5.0718 16L18.9282 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></div>
+                  <div class="font-style-body">Comprehensive door-to-door service with final mile delivery.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Cta />
+    <Footer backTo="Pricing" pageId={pageId} />
+  </div>
+</BaseLayout>

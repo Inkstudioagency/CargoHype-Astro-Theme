@@ -1,0 +1,53 @@
+{
+  "site": {
+    "title": "CargoHype - Freight Forwarding Astro Theme",
+    "base_url": "https://cargohype.example.com",
+    "lang": "en",
+    "logo": "/images/Frame-265.webp",
+    "logo_dark": "/images/Link_2Link.webp",
+    "logo_footer": "/images/Link_1Link.webp",
+    "logo_alt": "CargoHype logo with stylized cubic icon to the left of the text.",
+    "logo_footer_alt": "CargoHype logo with a white cube icon to the left of the text.",
+    "logo_dark_alt": "CargoHype logo with an orange cube icon to the left of the company name in orange text."
+  },
+  "metadata": {
+    "meta_author": "CargoHype",
+    "meta_image": "/images/og-image.webp",
+    "meta_description": "CargoHype is a modern freight forwarding Astro theme for logistics companies, forwarders and shipping businesses. Clean, fast and ready to launch."
+  },
+  "webflow": {
+    "site_id": "6abb298d9171ad26f9b240fd",
+    "pages": {
+      "home": "6abb298d9171ad26f9b240cf",
+      "about": "6abb298d9171ad26f9b240d9",
+      "services": "6abb298d9171ad26f9b240da",
+      "service_detail": "6abb298d9171ad26f9b240e1",
+      "careers": "6abb298d9171ad26f9b240e2",
+      "career_detail": "6abb298d9171ad26f9b240e3",
+      "newsroom": "6abb298d9171ad26f9b240df",
+      "newsroom_detail": "6abb298d9171ad26f9b240e0",
+      "pricing": "6abb298d9171ad26f9b240e4",
+      "contact": "6abb298d9171ad26f9b240de",
+      "style_guide": "6abb298d9171ad26f9b240d0",
+      "not_found": "6abb298d9171ad26f9b240d6"
+    }
+  },
+  "cms": {
+    "provider": "strapi",
+    "fallback_to_local": true
+  },
+  "forms": {
+    "endpoint": ""
+  },
+  "contact": {
+    "email": "quotes@example.com",
+    "phone": "+12345678910"
+  },
+  "footer": {
+    "blurb": "Global freight forwarding with one point of contact and full visibility — Dhaka, Singapore, Rotterdam.",
+    "newsletter_label": "Get updates",
+    "newsletter_note": "Your information is never disclosed to third parties.",
+    "copyright": "© 2026 CargoHype Logistics Ltd.",
+    "powered_by": "Powered By Astro"
+  }
+}

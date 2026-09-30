@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Cta from '../../components/Cta.astro';
+import config from '../../config/config.json';
+import { getArticles, articleUrl, formatDate, type Article } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({ params: { slug: article.slug }, props: { article, articles } }));
+}
+
+const { article, articles } = Astro.props as { article: Article; articles: Article[] };
+const pageId = config.webflow.pages.newsroom_detail;
+
+const SEO_TITLE = article.seo.metaTitle || article.title;
+const SEO_DESCRIPTION = article.seo.metaDescription || article.summary;
+const tags = article.tags.filter((tag) => tag && tag.trim());
+const included = Array.from({ length: 5 }, (_, i) => article.includedServices[i] ?? '');
+
+// Related Post slider: one slide per article (Webflow: limit 1 / offset N per slide),
+// newest first, excluding the current article.
+const related = articles.filter((a) => a.slug !== article.slug).slice(0, 5);
+const relatedSlides: Article[][] = related.length ? related.map((a) => [a]) : [[]];
+---
+
+<BaseLayout pageId={pageId} fullTitle={SEO_TITLE} description={SEO_DESCRIPTION} image={article.mainImage}>
+  <div class="page-wrapper">
+    <div id="blog" class="newsroom-details-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <div class="hero-badge-text uppercase">Blog /</div>
+                <div class="hero-badge-text uppercase">{article.category}</div>
+              </div>
+              <div class="about-head-row blog-hero">
+                <div class="blog-heading-wrap">
+                  <h1 class="hero-title">{article.title}</h1>
+                </div>
+                <div class="newsroom-hero-rgjht">
+                  <p class="hero-paragraph blog-summary">{article.summary}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section white-50">
+      <div class="section-gap large">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-details-grid">
+            <div class="post-sidebar">
+              <div to-top-0="" class="section-badge white">
+                <div class="badge-dot deep"></div>
+                <div class="section-badge-text">Preview</div>
+              </div>
+              <div class="post-meta-list">
+                <div to-top-0="" class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Author</div>
+                    <p class="post-meta-value">{article.authorName}</p>
+                  </div>
+                </div>
+                <div to-top-0="" class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Date</div>
+                    <p class="post-meta-value">{formatDate(article.publishedDate)}</p>
+                  </div>
+                </div>
+                <div to-top-0="" class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block socail">
+                    <div class="post-meta-label">Share</div>
+                    <div class="post-share-list">
+                      <a href="https://www.instagram.com/" target="_blank" class="newsroom-card-link w-inline-block">
+                        <div class="post-share-text">Instagram</div>
+                        <div class="button-animated-line"></div>
+                        <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                      </a>
+                      <a href="https://www.linkedin.com/" target="_blank" class="newsroom-card-link w-inline-block">
+                        <div class="post-share-text">LinkedIn</div>
+                        <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                        <div class="button-animated-line"></div>
+                      </a>
+                      <a href="https://www.youtube.com/" target="_blank" class="newsroom-card-link w-inline-block">
+                        <div class="post-share-text">YouTube</div>
+                        <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                            <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg></div>
+                        <div class="button-animated-line"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div to-top-0="" class="post-meta-row">
+                  <div class="post-meta-star">*</div>
+                  <div class="post-meta-block">
+                    <div class="post-meta-label">Tags</div>
+                    <div class="post-tags">
+                      {tags.map((tag) => (
+                      <div class="post-tag">
+                        <p class="post-tag-text">{tag}</p>
+                      </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="newsroom-top">
+                <div class="service-section">
+                  <div to-top-0="" class="section-badge white">
+                    <div class="badge-dot deep"></div>
+                    <div class="section-badge-text">SEC / 01 Overview</div>
+                  </div>
+                  <div to-top-0="" class="service-overview w-richtext" set:html={article.overview}></div>
+                </div>
+                <div class="service-multi-img-wrap"><img src={article.mainImage} loading="lazy" to-top-0="" alt={article.title} class="service-media"></div>
+                <div to-top-0="" class="service-stats-row">
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{article.transit}</p>
+                      <div class="service-stat-unit">days door-to-door</div>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Transit</div>
+                    </div>
+                  </div>
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{article.cutOff}</p>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Cut-off</div>
+                    </div>
+                  </div>
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{article.coverage}</p>
+                      <div class="service-stat-unit">countries</div>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Coverage</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div to-top-0="" class="service-overview _02 w-richtext" set:html={article.details}></div>
+              <div to-top-0="" class="service-approach-card">
+                <div class="service-approach-top">
+                  <div class="service-approach-tag">A—02</div>
+                  <div class="service-approach-title">{article.cardTitle}</div>
+                </div>
+                <p class="service-approach-text">{article.cardSummary}</p>
+              </div>
+              <div class="service-included">
+                <div to-top-0="" class="service-included-label">What&#x27;s included</div>
+                <div to-top-0="" class="service-included-row">
+                  <div class="service-included-number">01</div>
+                  <p class="service-included-title">{included[0]}</p>
+                </div>
+                <div to-top-0="" class="service-included-row">
+                  <div class="service-included-number">02</div>
+                  <p class="service-included-title">{included[1]}</p>
+                </div>
+                <div to-top-0="" class="service-included-row">
+                  <div class="service-included-number">03</div>
+                  <p class="service-included-title">{included[2]}</p>
+                </div>
+                <div to-top-0="" class="service-included-row">
+                  <div class="service-included-number">04</div>
+                  <p class="service-included-title">{included[3]}</p>
+                </div>
+                <div to-top-0="" class="service-included-row last">
+                  <div class="service-included-number">05</div>
+                  <p class="service-included-title">{included[4]}</p>
+                </div>
+              </div>
+              <div to-top-0="" class="service-overview w-richtext" set:html={article.conclusion}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-gap large">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="newsroom-wrap">
+            <div class="newsroom-head">
+              <div class="section-head blog">
+                <h2 class="section-title">Related  Post</h2>
+              </div>
+            </div>
+            <div data-delay="4000" data-animation="slide" class="post-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+              <div class="blog-slider-mask w-slider-mask">
+                {relatedSlides.map((items) => (
+                <div class="blog-slide w-slide">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      {items.map((a) => (
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="newsroom-card releted-post">
+                          <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image"></a>
+                          <div class="newsroom-card-body">
+                            <div class="newsroom-card-top">
+                              <div class="newsroom-card-category">
+                                <div class="newsroom-card-category-icon"></div>
+                                <p class="newsroom-card-category-text">{a.category}</p>
+                              </div>
+                              <a href={articleUrl(a.slug)} class="blog-text-link w-inline-block">
+                                <div class="newsroom-card-title">{a.title}</div>
+                                <div class="demo">#</div>
+                              </a>
+                              <p class="newsroom-card-text">{a.summary}</p>
+                            </div>
+                            <div class="newsroom-card-bottom">
+                              <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                              <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                                <p class="newsroom-card-link-text">Read Article</p>
+                                <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                    <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                    <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></div>
+                                <div class="button-animated-line"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      ))}
+                    </div>
+                    {items.length === 0 && (
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                    )}
+                  </div>
+                </div>
+                ))}
+              </div>
+              <div class="post-slider-button let w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="post-slider-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="slider-nav hide-mobile w-slider-nav w-slider-nav-invert w-num"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Cta />
+    <Footer backTo="" pageId={pageId} />
+  </div>
+</BaseLayout>

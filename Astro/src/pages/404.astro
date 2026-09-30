@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import menu from '../config/menu.json';
+import social from '../config/social.json';
+import Button from '../components/ui/Button.astro';
+import config from '../config/config.json';
+
+const pageId = config.webflow.pages.not_found;
+const { site, contact, footer } = config;
+---
+
+<BaseLayout pageId={pageId} title="Not Found" description="This page does not exist or has moved. Head back to the CargoHype homepage, or jump to services, pricing or contact to carry on.">
+  <div class="page-wrapper">
+    <div id="404-hero" class="_404-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="not-found-content-block">
+              <div class="not-found-text-block">
+                <h1 class="not-found-text">4<span class="not-found-ht-text">0</span>4</h1>
+                <h2 data-wf-target="[[[&quot;6abb298d9171ad26f9b240d6&quot;,&quot;deb223b9-c449-3a7c-96aa-088f5d7901d4&quot;],[]]]" class="_404-heading">Page Not Found!</h2>
+                <div class="_404 align-center">The page you are looking for doesn&#x27;t exist or has been moved</div>
+              </div>
+              <div class="not-found-button-block">
+                <Button href="/" label="Back Home" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section footer">
+      <div class="section-gap">
+        <div class="w-layout-blockcontainer container w-container">
+          <footer class="footer-wrapper">
+            <div to-top-0="" class="footer-top">
+              <div class="footer-brand-block">
+                <div class="footer-brand-top">
+                  <a href="/" class="brand-link w-inline-block"><img loading="lazy" src={site.logo_footer} alt={site.logo_footer_alt} class="brand-logo"></a>
+                  <p class="footer-blurb">{footer.blurb}</p>
+                </div>
+                <div class="footer-contact-block">
+                  <div class="footer-label">Contact</div>
+                  <div class="footer-contact-list">
+                    <a href={`mailto:${contact.email}`} class="footer-contact-item w-inline-block">
+                      <div class="footer-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H19C19.5304 5 20.0391 5.21071 20.4142 5.58579C20.7893 5.96086 21 6.46957 21 7V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17V7Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M3 7L12 13L21 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                      <div class="footer-contact-text">{contact.email}</div>
+                    </a>
+                    <a href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`} class="footer-contact-item w-inline-block">
+                      <div class="footer-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 4H5C4.46957 4 3.96086 4.21071 3.58579 4.58579C3.21071 4.96086 3 5.46957 3 6C3.23705 9.90074 4.8935 13.5798 7.65683 16.3432C10.4202 19.1065 14.0993 20.763 18 21C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V15L15 13L13.5 15.5C11.3285 14.429 9.57096 12.6715 8.5 10.5L11 9L9 4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                      <div class="footer-contact-text">{contact.phone}</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-signup-block">
+                <div class="footer-form w-form">
+                  <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" class="footer-form-inner" data-wf-page-id="6abb298d9171ad26f9b240d6" data-wf-element-id="33fa7516-ad4d-277f-bf2a-f3ac95d56d0f">
+                    <div class="footer-label">{footer.newsletter_label}</div>
+                    <div class="footer-form-row"><input class="text-field grow w-input" maxlength="256" name="email" data-name="Email" placeholder="Newsletter email" type="email" id="email" required=""><input type="submit" data-wait="Please wait..." class="footer-form-button w-button" value=""></div>
+                    <div class="footer-form-note">{footer.newsletter_note}</div>
+                  </form>
+                  <div class="w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+                <div class="footer-social-list">
+                  {social.main.map((item) => (
+                    <a href={item.url} target="_blank" rel="noopener" class="footer-social-item w-inline-block">
+                      <div class="footer-social-text">{item.name}</div>
+                      <div class="footer-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div to-top-0="" class="footer-middle">
+              <a href="#404-hero" class="footer-back-top w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="back-top-arrow">
+                  <g clip-path="url(#clip0_10147_7891)">
+                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M16 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_10147_7891">
+                      <rect width="24" height="24" fill="currentColor"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div class="footer-contact-text">Back To Top</div>
+              </a>
+              <div class="footer-nav-grid _404">
+                <div class="footer-nav-column">
+                  <div class="footer-label">{menu.footer.company.label}</div>
+                  <div class="footer-nav-list">
+                    {menu.footer.company.links.map((link) => (
+                      <a href={link.url} aria-current={link.url === '/404' ? 'page' : undefined} class:list={['footer-nav-link', link.url === '/404' && 'w--current']}>{link.name}</a>
+                    ))}
+                  </div>
+                </div>
+                <div class="footer-nav-column">
+                  <div class="footer-label">{menu.footer.utility.label}</div>
+                  <div class="footer-nav-list">
+                    {menu.footer.utility.links.map((link) => (
+                      <a href={link.url} aria-current={link.url === '/404' ? 'page' : undefined} class:list={['footer-nav-link', link.url === '/404' && 'w--current']}>{link.name}</a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div to-top-0="" class="footer-bottom">
+              <div class="footer-link-text">{footer.copyright}</div>
+              <div class="instruction-wrap">
+                <div class="footer-link-text">{footer.powered_by}</div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,167 @@
+---
+/**
+ * Site footer. Contact details and copy come from `src/config/config.json`, links from
+ * `src/config/menu.json`, social links from `src/config/social.json`, and the
+ * "Services" column lists every entry of the services collection.
+ */
+import config from '../config/config.json';
+import menu from '../config/menu.json';
+import social from '../config/social.json';
+import { getServices, serviceUrl } from '../lib/content';
+
+interface Props {
+  /** Id of the element "Back To Top" scrolls to (the page's first wrapper). */
+  backTo: string;
+  pageId: string;
+}
+
+const { backTo, pageId } = Astro.props;
+const { site, contact, footer } = config;
+const services = await getServices();
+
+const trim = (url: string) => url.replace(/\/$/, '') || '/';
+const path = trim(Astro.url.pathname);
+const current = (url: string) => path === trim(url);
+---
+
+<section data-wf-component-id="b3075088-acab-c945-c338-a369ae361f70" data-wf-variant-state="base" class="section footer">
+  <div class="section-gap footer">
+    <div class="w-layout-blockcontainer container w-container">
+      <footer class="footer-wrapper">
+        <div to-top-0="" class="footer-top">
+          <div class="footer-brand-block">
+            <div class="footer-brand-top">
+              <a href="/" aria-current={current('/') ? 'page' : undefined} class:list={['brand-link w-inline-block', current('/') && 'w--current']}><img src={site.logo_footer} loading="lazy" alt={site.logo_footer_alt} class="brand-logo" /></a>
+              <p class="footer-blurb">{footer.blurb}</p>
+            </div>
+            <div class="footer-contact-block">
+              <div class="footer-label">Contact</div>
+              <div class="footer-contact-list">
+                <a href={`mailto:${contact.email}`} class="footer-contact-item w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="footer-icon">
+                    <g clip-path="url(#clip0_12131_8505)">
+                      <path d="M3 7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H19C19.5304 5 20.0391 5.21071 20.4142 5.58579C20.7893 5.96086 21 6.46957 21 7V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_12131_8505">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div class="footer-contact-text">{contact.email}</div>
+                </a>
+                <a href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`} class="footer-contact-item w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="footer-icon">
+                    <g clip-path="url(#clip0_12131_8511)">
+                      <path d="M9 4H5C4.46957 4 3.96086 4.21071 3.58579 4.58579C3.21071 4.96086 3 5.46957 3 6C3.23705 9.90074 4.8935 13.5798 7.65683 16.3432C10.4202 19.1065 14.0993 20.763 18 21C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V15L15 13L13.5 15.5C11.3285 14.429 9.57096 12.6715 8.5 10.5L11 9L9 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_12131_8511">
+                        <rect width="24" height="24" fill="currentColor"></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div class="footer-contact-text">{contact.phone}</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-signup-block">
+            <div class="footer-form w-form">
+              <form id="wf-form-Newsletter-Form" name="wf-form-Newsletter-Form" data-name="Newsletter Form" method="get" class="footer-form-inner" data-wf-page-id={pageId} data-wf-element-id="b3075088-acab-c945-c338-a369ae361f8b">
+                <div class="footer-label">{footer.newsletter_label}</div>
+                <div class="footer-form-row"><input class="text-field grow w-input" maxlength="256" name="email" data-name="Email" aria-label="Email Address" placeholder="Newsletter email" type="email" id="email" required="" /><input type="submit" data-wait="Please wait..." class="footer-form-button w-button" value="" aria-label="Subscribe" /></div>
+                <div class="footer-form-note">{footer.newsletter_note}</div>
+              </form>
+              <div class="success-message w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+            <div class="footer-social-list">
+              {social.main.map((item) => (
+                <a href={item.url} target="_blank" rel="noopener" class="footer-social-item w-inline-block">
+                  <div class="footer-social-text">{item.name}</div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="social-icon">
+                    <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div to-top-0="" class="footer-middle">
+          <a href={`#${backTo}`} class="footer-back-top w-inline-block">
+            <div class="arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="back-top-arrow">
+                <g clip-path="url(#clip0_10147_7891)">
+                  <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M16 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M8 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_10147_7891">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="back-top-arrow">
+                <g clip-path="url(#clip0_10147_7891)">
+                  <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M16 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M8 9L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_10147_7891">
+                    <rect width="24" height="24" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg></div>
+            <div class="footer-contact-text">Back To Top</div>
+          </a>
+          <div class="footer-nav-grid">
+            <div class="footer-nav-column">
+              <div class="footer-label">{menu.footer.company.label}</div>
+              <div class="footer-nav-list">
+                {menu.footer.company.links.map((link) => (
+                  <a href={link.url} aria-current={current(link.url) ? 'page' : undefined} class:list={['footer-nav-link', current(link.url) && 'w--current']}>{link.name}</a>
+                ))}
+              </div>
+            </div>
+            <div class="footer-nav-column">
+              <div class="footer-label">{menu.footer.services.label}</div>
+              <div class="footer-nav-list">
+                <div class="w-dyn-list">
+                  <div role="list" class="footer-nav-list w-dyn-items">
+                    {services.map((service) => (
+                      <div role="listitem" class="w-dyn-item">
+                        <a href={serviceUrl(service.slug)} aria-current={current(serviceUrl(service.slug)) ? 'page' : undefined} class:list={['footer-nav-link', current(serviceUrl(service.slug)) && 'w--current']}>{service.title}</a>
+                      </div>
+                    ))}
+                  </div>
+                  {services.length === 0 && (
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div class="footer-nav-column">
+              <div class="footer-label">{menu.footer.utility.label}</div>
+              <div class="footer-nav-list">
+                {menu.footer.utility.links.map((link) => (
+                  <a href={link.url} aria-current={current(link.url) ? 'page' : undefined} class:list={['footer-nav-link', current(link.url) && 'w--current']}>{link.name}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div to-top-0="" class="footer-bottom">
+          <div class="footer-link-text">{footer.copyright}</div>
+          <div class="instruction-wrap">
+            <div class="footer-link-text">{footer.powered_by}</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>

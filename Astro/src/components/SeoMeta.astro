@@ -1,0 +1,40 @@
+---
+/**
+ * <head> SEO tags: title, description, canonical, Open Graph and Twitter.
+ * Page titles follow the template convention "Page - Site title"; pass `fullTitle`
+ * to use a title verbatim (e.g. CMS meta titles).
+ */
+import config from '../config/config.json';
+
+interface Props {
+  title?: string;
+  fullTitle?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { title, fullTitle, description, image, noindex = false } = Astro.props;
+const { site, metadata } = config;
+
+const pageTitle = fullTitle || (title ? `${title} - ${site.title}` : site.title);
+const pageDescription = description || metadata.meta_description;
+const siteUrl = Astro.site ?? new URL(site.base_url);
+const imageUrl = new URL(image || metadata.meta_image, siteUrl).href;
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<title>{pageTitle}</title>
+<meta content={pageDescription} name="description" />
+<meta name="author" content={metadata.meta_author} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex" />}
+<meta content={pageTitle} property="og:title" />
+<meta content={pageDescription} property="og:description" />
+<meta content={imageUrl} property="og:image" />
+<meta property="og:url" content={canonical} />
+<meta content={pageTitle} name="twitter:title" />
+<meta content={pageDescription} name="twitter:description" />
+<meta content={imageUrl} name="twitter:image" />
+<meta property="og:type" content="website" />
+<meta content="summary_large_image" name="twitter:card" />

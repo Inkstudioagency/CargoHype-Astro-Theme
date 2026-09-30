@@ -1,0 +1,48 @@
+---
+/**
+ * Pill button with a sliding label and arrow icon ("Get a Quote", "View Details", …).
+ * Variants: `base` (light), `brand` (orange), `black`.
+ */
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'base' | 'brand' | 'black';
+  target?: string;
+}
+
+const { href, label, variant = 'base', target } = Astro.props;
+
+const variants = {
+  base: { name: 'base', state: 'base', cls: '' },
+  brand: { name: 'brand-color', state: '512e3f6a-e9c3-e716-07b8-48b8377cbc93', cls: 'w-variant-512e3f6a-e9c3-e716-07b8-48b8377cbc93' },
+  black: { name: 'black', state: 'd8437b09-d76a-44b9-7120-76c0c0325686', cls: 'w-variant-d8437b09-d76a-44b9-7120-76c0c0325686' },
+};
+const v = variants[variant];
+const isCurrent = href !== '#' && Astro.url.pathname.replace(/\/$/, '') === href.replace(/\/$/, '');
+// The brand variant carries its variant class on the link itself; the black variant only on its children.
+const linkClass = ['nav-button-main', variant === 'brand' && v.cls, 'w-inline-block', isCurrent && 'w--current'];
+---
+
+<a
+  data-wf--primary-button-v2--variant={v.name}
+  data-wf-component-id="64761935-b769-c96c-47b2-d54077beb6fe"
+  data-wf-variant-state={v.state}
+  href={href}
+  target={target}
+  aria-current={isCurrent ? 'page' : undefined}
+  class:list={linkClass}
+>
+  <div class:list={['nav-button', v.cls]}>
+    <div class="button-text-wrapper">
+      <div class="nav-button-text is-one">{label}</div>
+      <div class="nav-button-text is-two">{label}</div>
+    </div>
+  </div>
+  <div class:list={['nav-icon-button', v.cls]}>
+    <div class="button-arrow-pill"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow">
+        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow">
+        <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg></div>
+  </div>
+</a>

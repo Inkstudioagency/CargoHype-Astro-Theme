@@ -1,0 +1,59 @@
+---
+/**
+ * Layout for simple utility pages (policy, terms, …). It reuses the Style Guide
+ * page's hero and content blocks, so new pages match the template without new CSS.
+ * Fill the slot with <UtilityBlock> components.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import config from '../config/config.json';
+
+interface Props {
+  title: string;
+  summary: string;
+  description?: string;
+}
+
+const { title, summary, description } = Astro.props;
+// Same interactions as the Style Guide page (title animation, fade-ups).
+const pageId = config.webflow.pages.style_guide;
+---
+
+<BaseLayout pageId={pageId} title={title} description={description ?? summary}>
+  <div class="page-wrapper">
+    <div id="utility-hero" class="style-guide-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="style-guide-wrapper">
+              <div class="section-heading-block align-left">
+                <div class="style-guide-title-block bottom-padding">
+                  <h1 title-animation="">{title}</h1>
+                </div>
+                <div to-top-2s="" class="section-summary-block top-space">
+                  <p class="utility-summary">{summary}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main">
+      <section class="section white-50">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="style-guide-content-block">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </section>
+      <Cta />
+    </div>
+    <Footer backTo="utility-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

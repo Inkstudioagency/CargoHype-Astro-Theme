@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+import config from '../../config/config.json';
+import { getArticles, articleUrl, formatDate } from '../../lib/content';
+
+const pageId = config.webflow.pages.newsroom;
+
+// Featured: the newest article flagged "featured" (falls back to the newest article).
+// Recently Posted: everything else, newest first. Desktop shows three rows
+// (3 / 2 / 3 cards — Webflow limit+offset lists); the mobile-only list shows all of them.
+const articles = await getArticles();
+const featuredArticle = articles.find((a) => a.featured) ?? articles[0];
+const featured = featuredArticle ? [featuredArticle] : [];
+const recent = articles.filter((a) => a !== featuredArticle);
+const recentRow1 = recent.slice(0, 3);
+const recentRow2 = recent.slice(3, 5);
+const recentRow3 = recent.slice(5, 8);
+---
+
+<BaseLayout pageId={pageId} title="Newsroom" description="A CMS-driven newsroom and blog listing for the CargoHype Astro theme, with categories, featured posts and a ready-made article template.">
+  <div class="page-wrapper">
+    <div id="blog" class="newsroom-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <div class="hero-badge-text uppercase">PAGE / 05 NEWSROOM</div>
+              </div>
+              <div class="about-head-row">
+                <div class="max-width-35">
+                  <h1 class="hero-title">From the operations floor.</h1>
+                </div>
+                <div class="about-head-right">
+                  <p class="hero-paragraph newsroom-summary">Lane data, rerouting notes, and practical customs guidance — written by the coordinators who handle your cargo, not a content team.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section white-50">
+      <div class="section-gap large">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="newsroom-list-wrap">
+            <div class="newsroom-list-block">
+              <h2 class="newsroom-list-title">Featured</h2>
+              <div class="w-dyn-list">
+                <div role="list" class="w-dyn-items">
+                  {featured.map((a) => (
+                  <div role="listitem" class="w-dyn-item">
+                    <div to-top-0="" class="newsroom-featured-card"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-featured-image">
+                      <div class="newsroom-featured-overlay"></div>
+                      <div class="newsroom-featured-top">
+                        <div class="newsroom-card-category">
+                          <div class="newsroom-card-category-icon"></div>
+                          <p class="newsroom-card-category-text inverse">{a.category}</p>
+                        </div>
+                        <p class="newsroom-featured-date">{formatDate(a.publishedDate)}</p>
+                      </div>
+                      <div class="newsroom-featured-bottom">
+                        <a href={articleUrl(a.slug)} class="post-title-block w-inline-block">
+                          <div class="newsroom-featured-title">{a.title}</div>
+                          <div class="demo">#</div>
+                        </a>
+                        <a href={articleUrl(a.slug)} class="blog-button w-inline-block">
+                          <div class="blog-button-text-wrap">
+                            <div class="button-text is-one">Read the briefing</div>
+                            <div class="button-text is-two">Read the briefing</div>
+                          </div>
+                          <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                              <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                              <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  ))}
+                </div>
+                {featured.length === 0 && (
+                <div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>
+                )}
+              </div>
+            </div>
+            <div class="newsroom-list-block">
+              <h2 class="newsroom-list-title">Recently Posted</h2>
+              <div class="newsroom-rows">
+                <div class="w-dyn-list">
+                  <div role="list" class="newsroom-grid w-dyn-items">
+                    {recentRow1.map((a) => (
+                    <div role="listitem" class="w-dyn-item">
+                      <div to-top-0="" class="newsroom-card">
+                        <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image">
+                          <div class="demo">#</div>
+                        </a>
+                        <div class="newsroom-card-body">
+                          <div class="newsroom-card-top">
+                            <div class="newsroom-card-category">
+                              <div class="newsroom-card-category-icon"></div>
+                              <p class="newsroom-card-category-text">{a.category}</p>
+                            </div>
+                            <a href={articleUrl(a.slug)} class="post-title-wrap w-inline-block">
+                              <div class="demo">#</div>
+                              <div class="newsroom-card-title">{a.title}</div>
+                            </a>
+                            <p class="newsroom-card-text">{a.summary}</p>
+                          </div>
+                          <div class="newsroom-card-bottom">
+                            <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                            <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                              <p class="newsroom-card-link-text">Read Article</p>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                              <div class="button-animated-line"></div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    ))}
+                  </div>
+                  {recentRow1.length === 0 && (
+                  <div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                  )}
+                </div>
+                <div class="w-dyn-list">
+                  <div role="list" class="newsroom-grid two w-dyn-items">
+                    {recentRow2.map((a) => (
+                    <div role="listitem" class="w-dyn-item">
+                      <div to-top-0="" class="newsroom-card">
+                        <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image">
+                          <div class="demo">#</div>
+                        </a>
+                        <div class="newsroom-card-body">
+                          <div class="newsroom-card-top">
+                            <div class="newsroom-card-category">
+                              <div class="newsroom-card-category-icon"></div>
+                              <p class="newsroom-card-category-text">{a.category}</p>
+                            </div>
+                            <a href={articleUrl(a.slug)} class="post-title-wrap middle w-inline-block">
+                              <div class="newsroom-card-title">{a.title}</div>
+                              <div class="demo">#</div>
+                            </a>
+                            <p class="newsroom-card-text">{a.summary}</p>
+                          </div>
+                          <div class="newsroom-card-bottom">
+                            <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                            <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                              <p class="newsroom-card-link-text">Read Article</p>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                              <div class="button-animated-line"></div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    ))}
+                  </div>
+                  {recentRow2.length === 0 && (
+                  <div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                  )}
+                </div>
+                <div class="w-dyn-list">
+                  <div role="list" class="newsroom-grid w-dyn-items">
+                    {recentRow3.map((a) => (
+                    <div role="listitem" class="w-dyn-item">
+                      <div to-top-0="" class="newsroom-card">
+                        <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image">
+                          <div class="demo">#</div>
+                        </a>
+                        <div class="newsroom-card-body">
+                          <div class="newsroom-card-top">
+                            <div class="newsroom-card-category">
+                              <div class="newsroom-card-category-icon"></div>
+                              <p class="newsroom-card-category-text">{a.category}</p>
+                            </div>
+                            <a href={articleUrl(a.slug)} class="post-title-wrap w-inline-block">
+                              <div class="newsroom-card-title">{a.title}</div>
+                              <div class="demo">#</div>
+                            </a>
+                            <p class="newsroom-card-text">{a.summary}</p>
+                          </div>
+                          <div class="newsroom-card-bottom">
+                            <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                            <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                              <p class="newsroom-card-link-text">Read Article</p>
+                              <div class="button-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="button-arrow v2">
+                                  <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                              <div class="button-animated-line"></div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    ))}
+                  </div>
+                  {recentRow3.length === 0 && (
+                  <div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                  )}
+                </div>
+              </div>
+              <div class="blog-collection-wrap">
+                <div class="w-dyn-list">
+                  <div role="list" class="blog-collection-list w-dyn-items">
+                    {recent.map((a) => (
+                    <div role="listitem" class="w-dyn-item">
+                      <div class="newsroom-card">
+                        <a href={articleUrl(a.slug)} class="post-image-wrap w-inline-block"><img src={a.mainImage} loading="lazy" alt={a.title} class="newsroom-card-image">
+                          <div class="demo">#</div>
+                        </a>
+                        <div class="newsroom-card-body">
+                          <div class="newsroom-card-top">
+                            <div class="newsroom-card-category">
+                              <div class="newsroom-card-category-icon"></div>
+                              <p class="newsroom-card-category-text">{a.category}</p>
+                            </div>
+                            <a href={articleUrl(a.slug)} class="post-title-wrap w-inline-block">
+                              <div class="newsroom-card-title">{a.title}</div>
+                              <div class="demo">#</div>
+                            </a>
+                            <p class="newsroom-card-text">{a.summary}</p>
+                          </div>
+                          <div class="newsroom-card-bottom">
+                            <p class="newsroom-card-date">{formatDate(a.publishedDate)}</p>
+                            <a href={articleUrl(a.slug)} class="newsroom-card-link w-inline-block">
+                              <p class="newsroom-card-link-text">Read Article</p><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="blog-button-text">
+                                <path d="M9 6.6503C9 6.6503 15.9383 6.1076 16.9154 7.0846C17.8925 8.0617 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    ))}
+                  </div>
+                  {recent.length === 0 && (
+                  <div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Faq />
+    <Cta />
+    <Footer backTo="blog" pageId={pageId} />
+  </div>
+</BaseLayout>

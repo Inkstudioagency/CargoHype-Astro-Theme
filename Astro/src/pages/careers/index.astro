@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Cta from '../../components/Cta.astro';
+import ArrowButton from '../../components/ui/ArrowButton.astro';
+import config from '../../config/config.json';
+import { getCareers, careerUrl } from '../../lib/content';
+
+const pageId = config.webflow.pages.careers;
+const careers = await getCareers();
+---
+
+<BaseLayout pageId={pageId} title="Careers" description="The careers listing page in the CargoHype Astro theme, powered by a CMS collection so new roles are added without touching the layout.">
+  <div class="page-wrapper">
+    <div id="career-hero" class="career-hero">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="hero-content full">
+              <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <div class="hero-badge-text uppercase">PAGE / 04 CAREERS</div>
+              </div>
+              <div class="career-header">
+                <div class="career-heading-wrap">
+                  <h1 class="hero-title">Careers</h1>
+                  <div class="hero-title">with our company</div>
+                </div>
+                <div class="about-head-right max-width-22">
+                  <p class="hero-paragraph career-hero-main">We help companies reach their full potential. Are you ready to reach yours?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main">
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="career-wrap">
+              <div class="section-header">
+                <div class="section-badge white">
+                  <div class="badge-dot deep"></div>
+                  <div class="section-badge-text">SEC / 01 Seeking careers?</div>
+                </div>
+                <div class="career-head-row">
+                  <h2 class="section-heading career">Become a Part of Our Big Family</h2>
+                  <div class="section-header-right">
+                    <p class="section-header-summary">Want to join our team? Send your application to Cargo Hype head office. If you&#x27;re willing to relocate, apply for the Cargo Hype Track International program by emailing your CV and cover letter to <a href="mailto:career@cargohype.com" class="link">career@cargohype.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-dyn-list">
+                <div role="list" class="career-grid w-dyn-items">
+                  {careers.map((career) => (
+                  <div role="listitem" class="w-dyn-item">
+                    <div to-top-0="" class="career-card">
+                      <div class="career-card-top">
+                        <div class="career-post-label">
+                          <div class="career-post-dot"></div>
+                          <div class="career-post-text">{career.postLabel}</div>
+                        </div>
+                        <div class="career-meta">
+                          <div class="career-meta-item">
+                            <div class="career-meta-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21s7-5.686 7-11a7 7 0 1 0-14 0c0 5.314 7 11 7 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"></circle>
+                              </svg></div>
+                            <div class="career-meta-text">{career.location}</div>
+                          </div>
+                          <div class="career-meta-item">
+                            <div class="career-meta-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                                <path d="M12 7.5V12l3 1.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></div>
+                            <div class="career-meta-text">{career.jobType}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="career-card-body">
+                        <div class="career-card-text">
+                          <a href={careerUrl(career.slug)} class="career-text-link w-inline-block">
+                            <div class="career-card-title">{career.title}</div>
+                            <div class="demo">#</div>
+                          </a>
+                          <p class="career-card-summary">{career.summary}</p>
+                        </div>
+                        <ArrowButton href={careerUrl(career.slug)} label={career.buttonText || 'Apply now'} variant="brand" />
+                      </div>
+                    </div>
+                  </div>
+                  ))}
+                </div>
+                {careers.length === 0 && (
+                <div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section white-50">
+        <div to-top-0="" class="gallery-list-wrap">
+          <div class="career-gallery"><img src="/images/Rectangle-16.webp" loading="lazy" sizes="(max-width: 1533px) 100vw, 1533px" srcset="/images/Rectangle-16-p-500.webp 500w, /images/Rectangle-16-p-800.webp 800w, /images/Rectangle-16-p-1080.webp 1080w, /images/Rectangle-16.webp 1533w" alt="Young man with short curly brown hair wearing a yellow reflective safety vest over a black jacket, smiling in an indoor industrial or warehouse setting with blurred background and green and yellow containers." class="career-gallery-image"><img src="/images/Rectangle-17-1.webp" loading="lazy" sizes="(max-width: 1530px) 100vw, 1530px" srcset="/images/Rectangle-17-1-p-500.webp 500w, /images/Rectangle-17-1-p-800.webp 800w, /images/Rectangle-17-1-p-1080.webp 1080w, /images/Rectangle-17-1.webp 1530w" alt="Bearded man wearing a dark blue work jacket sitting inside a warehouse aisle with shelves and boxes in the background." class="career-gallery-image"><img src="/images/Rectangle-18.webp" loading="lazy" sizes="(max-width: 1533px) 100vw, 1533px" srcset="/images/Rectangle-18-p-500.webp 500w, /images/Rectangle-18-p-800.webp 800w, /images/Rectangle-18-p-1080.webp 1080w, /images/Rectangle-18.webp 1533w" alt="Smiling older man with gray hair and beard wearing glasses and a bright orange and yellow safety vest inside a warehouse." class="career-gallery-image"><img src="/images/Rectangle-19-6.webp" loading="lazy" sizes="100vw" srcset="/images/Rectangle-19-6-p-500.webp 500w, /images/Rectangle-19-6-p-800.webp 800w, /images/Rectangle-19-6-p-1080.webp 1080w, /images/Rectangle-19-6-p-1600.webp 1600w, /images/Rectangle-19-6.webp 2040w" alt="Middle-aged man with beard wearing an orange safety vest over a gray sweatshirt holding a tablet in a warehouse aisle." class="career-gallery-image"><img src="/images/Rectangle-20.webp" loading="lazy" sizes="(max-width: 1530px) 100vw, 1530px" srcset="/images/Rectangle-20-p-500.webp 500w, /images/Rectangle-20-p-800.webp 800w, /images/Rectangle-20-p-1080.webp 1080w, /images/Rectangle-20.webp 1530w" alt="Portrait of a construction worker wearing a yellow hard hat and orange reflective safety vest over a gray shirt, against a dark blurred background." class="career-gallery-image"></div>
+          <div class="career-gallery"><img src="/images/Rectangle-16.webp" loading="lazy" sizes="(max-width: 1533px) 100vw, 1533px" srcset="/images/Rectangle-16-p-500.webp 500w, /images/Rectangle-16-p-800.webp 800w, /images/Rectangle-16-p-1080.webp 1080w, /images/Rectangle-16.webp 1533w" alt="Young man with short curly brown hair wearing a yellow reflective safety vest over a black jacket, smiling in an indoor industrial or warehouse setting with blurred background and green and yellow containers." class="career-gallery-image"><img src="/images/Rectangle-17-1.webp" loading="lazy" sizes="(max-width: 1530px) 100vw, 1530px" srcset="/images/Rectangle-17-1-p-500.webp 500w, /images/Rectangle-17-1-p-800.webp 800w, /images/Rectangle-17-1-p-1080.webp 1080w, /images/Rectangle-17-1.webp 1530w" alt="Bearded man wearing a dark blue work jacket sitting inside a warehouse aisle with shelves and boxes in the background." class="career-gallery-image"><img src="/images/Rectangle-18.webp" loading="lazy" sizes="(max-width: 1533px) 100vw, 1533px" srcset="/images/Rectangle-18-p-500.webp 500w, /images/Rectangle-18-p-800.webp 800w, /images/Rectangle-18-p-1080.webp 1080w, /images/Rectangle-18.webp 1533w" alt="Smiling older man with gray hair and beard wearing glasses and a bright orange and yellow safety vest inside a warehouse." class="career-gallery-image"><img src="/images/Rectangle-19-6.webp" loading="lazy" sizes="100vw" srcset="/images/Rectangle-19-6-p-500.webp 500w, /images/Rectangle-19-6-p-800.webp 800w, /images/Rectangle-19-6-p-1080.webp 1080w, /images/Rectangle-19-6-p-1600.webp 1600w, /images/Rectangle-19-6.webp 2040w" alt="Middle-aged man with beard wearing an orange safety vest over a gray sweatshirt holding a tablet in a warehouse aisle." class="career-gallery-image"><img src="/images/Rectangle-20.webp" loading="lazy" sizes="(max-width: 1530px) 100vw, 1530px" srcset="/images/Rectangle-20-p-500.webp 500w, /images/Rectangle-20-p-800.webp 800w, /images/Rectangle-20-p-1080.webp 1080w, /images/Rectangle-20.webp 1530w" alt="Portrait of a construction worker wearing a yellow hard hat and orange reflective safety vest over a gray shirt, against a dark blurred background." class="career-gallery-image"></div>
+        </div>
+      </section>
+      <Cta />
+    </div>
+    <Footer backTo="career-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

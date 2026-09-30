@@ -1,0 +1,7 @@
+{
+  "main": [
+    { "name": "LinkedIn", "url": "http://linkedin.com/" },
+    { "name": "Instagram", "url": "http://instagram.com/" },
+    { "name": "YouTube", "url": "https://www.youtube.com/" }
+  ]
+}

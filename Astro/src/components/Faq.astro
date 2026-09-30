@@ -1,0 +1,66 @@
+---
+/** FAQ section with image and accordion. Questions live in `src/data/faq.json`. */
+import faq from '../data/faq.json';
+
+---
+
+<section data-wf-component-id="b0c2c950-84aa-60c3-ecea-3d81e36981e1" data-wf-variant-state="base" class="section">
+  <div class="section-gap large">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="faq-wrap">
+        <div id="w-node-ed70f9c8-743a-bfc6-2c1e-0c671157add1-e36981e1" class="faq-image-wrap"><img class="faq-image" src="/images/Frame-37.webp" to-top-0="" alt="Four large white semi trucks parked at loading docks of a modern warehouse building under clear blue sky, with yellow road lines and puddles reflecting the trucks and building in the foreground." sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" loading="lazy" srcset="/images/Frame-37-p-500.webp 500w, /images/Frame-37-p-800.webp 800w, /images/Frame-37-p-1080.webp 1080w, /images/Frame-37.webp 1392w"></div>
+        <div class="faq-content">
+          <div class="section-badge">
+            <div class="badge-dot deep"></div>
+            <div class="section-badge-text">SEC / 09 FAQ</div>
+          </div>
+          <div class="faq-head">
+            <div class="max-width-35">
+              <h2 class="section-title large">Answers before you ask.</h2>
+            </div>
+            <div class="max-width-28">
+              <p class="section-paragraph">The questions every new shipper sends us first. Anything else — your coordinator answers within the hour, day or night.</p>
+            </div>
+          </div>
+          <div class="faq-list">
+            {faq.items.map((item, index) => (
+              <div to-top-0="" class="faq-item">
+                <div class="faq-item-top">
+                  <p class="faq-item-number">Q—{String(index + 1).padStart(2, '0')}</p>
+                  <div class="faq-title-wrap">
+                    <div class="faq-item-title">{item.question}</div>
+                    <div class="faq-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow">
+                        <g clip-path="url(#clip0_10147_7798)">
+                          <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_10147_7798">
+                            <rect width="24" height="24" fill="currentColor"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="faq-arrow is-02">
+                        <g clip-path="url(#clip0_10147_7806)">
+                          <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_10147_7806">
+                            <rect width="24" height="24" fill="currentColor"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg></div>
+                  </div>
+                </div>
+                <div class="faq-summary-wrap">
+                  <div class="faq-left"></div>
+                  <p class="faq-item-text">{item.answer}</p>
+                </div>
+                <div class="faq-line"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Faq from '../../components/Faq.astro';
+import ArrowButton from '../../components/ui/ArrowButton.astro';
+import config from '../../config/config.json';
+import { getServices, serviceUrl } from '../../lib/content';
+
+const pageId = config.webflow.pages.services;
+// One slide per service (Webflow: limit 1 / offset N per slide).
+const services = (await getServices()).slice(0, 5);
+---
+
+<BaseLayout pageId={pageId} title="Services" description="Air, ocean and road freight service pages built into the CargoHype Astro theme, with lane details, transit times and CMS-driven service items.">
+  <div class="page-wrapper">
+    <div id="service-hero" class="service-hero-area">
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <section class="hero-wrapper">
+              <div class="service-hero">
+                <div class="service-hero-content">
+                  <div class="service-hero-left">
+                    <div class="hero-badge">
+                      <div class="badge-dot"></div>
+                      <div class="hero-badge-text">PAGE / 02 SERVICES</div>
+                    </div>
+                    <h1 class="hero-title">Cargo that travels seamlessly according to your timeline.</h1>
+                  </div>
+                  <div class="service-summary-wrap">
+                    <p class="hero-paragraph">Comprehensive freight solutions tailored to your growth. Whether by air, sea, or land, we efficiently transport goods to over 50 countries, ensuring timely and accurate delivery.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main">
+      <section class="section">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="service-head">
+              <div class="service-badge">
+                <div class="badge-dot deep"></div>
+                <div class="hero-badge-text light">SEC / 03 Service</div>
+              </div>
+              <div class="service-title-wrap">
+                <h2 class="service-heading">Every mode, one manifest. Your cargo, handled end to end.</h2>
+              </div>
+              <div class="max-width-48">
+                <p class="service-summary">Secure your cargo on the Dhaka–Rotterdam route, seamlessly extended across the globe through our trusted partner networks — all monitored and adjusted in real-time by our dedicated operations team.</p>
+              </div>
+            </div>
+            <div data-delay="4000" data-animation="slide" class="service-slider w-slider" data-autoplay="false" to-top-0="" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+              <div class="service-slider-mask w-slider-mask">
+                {services.map((service) => (
+                <div class="service-slide w-slide">
+                  <div class="w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                      <div role="listitem" class="w-dyn-item">
+                        <div class="service-item">
+                          <div class="service-item-top">
+                            <div class="service-item-dot"></div>
+                            <p class="service-item-number">{service.serialNumber}</p>
+                          </div>
+                          <div class="service-image-wrap"><img src={service.logoBlack} loading="lazy" alt={service.title} class="service-item-image black"><img src={service.logoWhite} loading="lazy" alt={service.title} class="service-item-image white">
+                            <div class="service-blury-overlay"></div>
+                            <div class="service-button-wrap">
+                              <ArrowButton href={serviceUrl(service.slug)} label="View Details" variant="black" />
+                            </div>
+                          </div>
+                          <div class="service-item-text">
+                            <div class="service-item-title">{service.title}</div>
+                            <p class="service-item-paragraph">{service.summary}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                ))}
+              </div>
+              <div class="service-nav-button left w-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M19 12L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 18L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M11 6L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="service-nav-button right w-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="service-nav-icon">
+                  <path d="M5 12L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 18L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M13 6L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+              <div class="hide w-slider-nav w-round w-num"></div>
+            </div>
+            <div class="service-wrap"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section schedule">
+        <div class="section-gap">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="schedule-main">
+              <div class="section-head">
+                <div class="section-badge dark">
+                  <div class="process-step-icon"></div>
+                  <div class="section-badge-text inverse">SEC / 02 SCHEDULED LANES</div>
+                </div>
+                <div class="section-head-row">
+                  <div class="section-head-left">
+                    <h2 class="section-title inverse">Fixed lanes, fixed days, fixed expectations.</h2>
+                  </div>
+                  <div class="section-head-right schedule">
+                    <p class="section-paragraph inverse">Published transit times on our core lanes, updated weekly. If your lane isn&#x27;t listed, the network desk will route it within a day.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <div to-top-0="" class="schedule-table-wrap">
+                  <div class="schedule-top-grid">
+                    <div class="scedule-text-wrap">
+                      <div class="scedule-text">LANE</div>
+                    </div>
+                    <div class="scedule-text-wrap">
+                      <div class="scedule-text">MODE</div>
+                    </div>
+                    <div class="scedule-text-wrap">
+                      <div class="scedule-text">TRANSIT</div>
+                    </div>
+                    <div class="scedule-text-wrap">
+                      <div class="scedule-text">DEPARTURES</div>
+                    </div>
+                    <div class="scedule-text-wrap">
+                      <div class="scedule-text">CUT-OFF</div>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid sceduled-table">
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular medium">DAC → RTM  ·  Dhaka — Rotterdam</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Ocean FCL</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">24 days</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Weekly × 3</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Thu 18:00</div>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid sceduled-table">
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular">DAC → SIN  ·  Dhaka — Singapore</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Ocean LCL</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">6 days</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Weekly × 4</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Tue 12:00</div>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid sceduled-table">
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular">DAC → JED  ·  Dhaka — Jeddah</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Ocean FCL</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">14 days</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Weekly × 2</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Fri 18:00</div>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid sceduled-table">
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular">DAC → FRA  ·  Dhaka — Frankfurt</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Air freight</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">3 days</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Daily</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Same day</div>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid sceduled-table last">
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular">CGP → SHA  ·  Chattogram — Shanghai</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Ocean FCL</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">11 days</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Weekly × 2</div>
+                    </div>
+                    <div class="scedule-text-wrapper">
+                      <div class="font-regular normal-white">Wed 15:00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </section>
+      <Faq />
+    </div>
+    <Footer backTo="service-hero" pageId={pageId} />
+  </div>
+</BaseLayout>

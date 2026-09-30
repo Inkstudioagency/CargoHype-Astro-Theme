@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Faq from '../../components/Faq.astro';
+import config from '../../config/config.json';
+import { getServices, type Service } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props as { service: Service };
+const pageId = config.webflow.pages.service_detail;
+const SEO_TITLE = service.seo.metaTitle || service.title;
+const SEO_DESCRIPTION = service.seo.metaDescription || service.summary;
+const SEO_IMAGE = service.seo.ogImage || service.mainImage;
+---
+
+<BaseLayout pageId={pageId} fullTitle={SEO_TITLE} description={SEO_DESCRIPTION} image={SEO_IMAGE}>
+  <div class="page-wrapper">
+    <div id="service-hero" class="service-details-area" style={`background-image:url("${service.mainImage}")`}>
+      <Header />
+      <section class="section">
+        <div class="section-gap hero">
+          <div class="w-layout-blockcontainer container w-container">
+            <section class="hero-wrapper">
+              <div class="serivce-details-hero">
+                <div class="service-hero-content">
+                  <div class="service-hero-left">
+                    <div class="hero-badge">
+                      <div class="badge-dot"></div>
+                      <div class="hero-badge-text uppercase">SERVICES /</div>
+                      <div class="hero-badge-text uppercase">{service.serialNumber}</div>
+                      <div class="hero-badge-text uppercase">-</div>
+                      <div class="hero-badge-text uppercase">{service.title}</div>
+                    </div>
+                    <h1 class="hero-title">{service.title}</h1>
+                  </div>
+                  <div class="service-summary-wrap">
+                    <p class="hero-paragraph">{service.summary}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <div class="serivce-overlay"></div>
+    </div>
+    <div class="main">
+      <section class="section white-50">
+        <div class="section-gap large">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="w-layout-grid service-details-grid">
+              <div class="service-right-block">
+                <div class="service-stats-row">
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{service.transit}</p>
+                      <div class="service-stat-unit">days door-to-door</div>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Transit</div>
+                    </div>
+                  </div>
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{service.cutOff}</p>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Cut-off</div>
+                    </div>
+                  </div>
+                  <div class="service-stat">
+                    <div class="service-stat-value">
+                      <p data-counter="counter" class="service-stat-number">{service.coverage}</p>
+                      <div class="service-stat-number brand">+</div>
+                      <div class="service-stat-unit">countries</div>
+                    </div>
+                    <div class="service-stat-label-wrap">
+                      <div class="service-stat-label">Coverage</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-section">
+                  <div to-top-0="" class="section-badge white">
+                    <div class="badge-dot deep"></div>
+                    <div class="section-badge-text">SEC / 01 Overview</div>
+                  </div>
+                  <div to-top-0="" class="service-details w-richtext" set:html={service.overview}></div>
+                  <div class="service-included">
+                    <div to-top-0="" class="service-included-label">What&#x27;s included</div>
+                    <div to-top-0="" class="service-included-row top">
+                      <div class="service-included-number">01</div>
+                      <p class="service-included-title">{service.includedServices[0]}</p>
+                    </div>
+                    <div to-top-0="" class="service-included-row">
+                      <div class="service-included-number">02</div>
+                      <p class="service-included-title">{service.includedServices[1]}</p>
+                    </div>
+                    <div to-top-0="" class="service-included-row">
+                      <div class="service-included-number">03</div>
+                      <p class="service-included-title">{service.includedServices[2]}</p>
+                    </div>
+                    <div to-top-0="" class="service-included-row">
+                      <div class="service-included-number">04</div>
+                      <p class="service-included-title">{service.includedServices[3]}</p>
+                    </div>
+                    <div to-top-0="" class="service-included-row">
+                      <div class="service-included-number">05</div>
+                      <p class="service-included-title">{service.includedServices[4]}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-multi-img-wrap"><img src={service.image} loading="lazy" to-top-0="" alt={service.title} class="service-media"></div>
+                <div class="service-section">
+                  <div to-top-0="" class="section-badge white">
+                    <div class="badge-dot deep"></div>
+                    <div class="section-badge-text">SEC / 02 Our approach</div>
+                  </div>
+                  <div to-top-0="" class="service-details _02 w-richtext" set:html={service.approach}></div>
+                  <div class="service-approach-grid">
+                    <div to-top-0="" class="service-approach-card">
+                      <div class="service-approach-top">
+                        <div class="service-approach-tag">A—01</div>
+                        <div class="service-approach-title">{service.approachCards[0]?.title}</div>
+                      </div>
+                      <p class="service-approach-text">{service.approachCards[0]?.summary}</p>
+                    </div>
+                    <div to-top-2="" class="service-approach-card">
+                      <div class="service-approach-top">
+                        <div class="service-approach-tag">A—02</div>
+                        <div class="service-approach-title">{service.approachCards[1]?.title}</div>
+                      </div>
+                      <p class="service-approach-text">{service.approachCards[1]?.summary}</p>
+                    </div>
+                    <div to-top-4="" id="w-node-cac1cce8-170d-558e-d8c0-3cca5616a8a0-f9b240e1" class="service-approach-card">
+                      <div class="service-approach-top">
+                        <div class="service-approach-tag">A—03</div>
+                        <div class="service-approach-title">{service.approachCards[2]?.title}</div>
+                      </div>
+                      <p class="service-approach-text">{service.approachCards[2]?.summary}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-section">
+                  <div to-top-0="" class="section-badge white">
+                    <div class="badge-dot deep"></div>
+                    <div class="section-badge-text">SEC / 03 How this service works</div>
+                  </div>
+                  <div to-top-0="" class="service-details _03 w-richtext" set:html={service.work}></div>
+                  <div class="service-steps">
+                    <div to-top-0="" class="service-step-row">
+                      <div class="service-step-tag">Step 01</div>
+                      <div class="service-step-title">{service.steps[0]?.title}</div>
+                      <p class="service-step-text">{service.steps[0]?.summary}</p>
+                      <div class="step-line-wrap">
+                        <div class="step-line _01"></div>
+                      </div>
+                    </div>
+                    <div to-top-0="" class="service-step-row">
+                      <div class="service-step-tag">Step 02</div>
+                      <div class="service-step-title">{service.steps[1]?.title}</div>
+                      <p class="service-step-text">{service.steps[1]?.summary}</p>
+                      <div class="step-line-wrap">
+                        <div class="step-line _02"></div>
+                      </div>
+                    </div>
+                    <div to-top-0="" class="service-step-row">
+                      <div class="service-step-tag">Step 03</div>
+                      <div class="service-step-title">{service.steps[2]?.title}</div>
+                      <p class="service-step-text">{service.steps[2]?.summary}</p>
+                      <div class="step-line-wrap">
+                        <div class="step-line _03"></div>
+                      </div>
+                    </div>
+                    <div to-top-0="" class="service-step-row">
+                      <div class="service-step-tag">Step 04</div>
+                      <div class="service-step-title">{service.steps[3]?.title}</div>
+                      <p class="service-step-text">{service.steps[3]?.summary}</p>
+                      <div class="step-line-wrap">
+                        <div class="step-line _04"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="w-node-d9f75558-4b34-be6f-aeff-a513239d69cf-f9b240e1" class="service-sticky-wrap">
+                <div class="service-left-main">
+                  <div class="service-price-card">
+                    <div class="pricing-price-row">
+                      <div class="pricing-amount">{service.price}</div>
+                      <div class="pricing-small-text">{service.priceUnit}</div>
+                    </div>
+                  </div>
+                  <div class="service-left">
+                    <div class="form-top">
+                      <div class="section-badge contact">
+                        <div class="badge-dot deep"></div>
+                        <div class="hero-badge-text contact">Submit a request</div>
+                      </div>
+                      <div class="form-title">Interested in this service?</div>
+                    </div>
+                    <div class="service-form-main w-form">
+                      <form id="email-form" name="email-form" data-name="Email Form" method="get" class="service-form" data-wf-page-id="6abb298d9171ad26f9b240e1" data-wf-element-id="a5d14872-3f08-11ea-83d9-03c99a5931f3">
+                        <div class="form-field-wrap"><label for="name" class="field-lavel">Name<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="ex. Philipe Sam" type="text" id="name"></div>
+                        <div class="form-field-wrap">
+                          <div class="form-field-wrap"><label for="Email" class="field-lavel">Email Address<span class="star">*</span></label><input class="form-text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="philipesam@gmail.com" type="email" id="Email" required=""></div><label for="field" class="field-lavel">Note<span class="star">*</span></label><textarea placeholder="Example Text" maxlength="5000" id="field" name="field" data-name="Field" class="form-text-field service w-input"></textarea>
+                        </div><input type="submit" data-wait="Please wait..." class="form-submit-button w-button" value="Request a Quote">
+                      </form>
+                      <div class="success-message w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="error-message w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Faq />
+    </div>
+    <Footer backTo="service-hero" pageId={pageId} />
+  </div>
+</BaseLayout>
